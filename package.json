@@ -1,0 +1,11 @@
+{
+  "name": "bba-site-uri",
+  "private": true,
+  "description": "infractiunifiscale.ro, atragerearaspunderii.ro, litigiimunca.ro (Buchhaltung & Bilanz Audit)",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "node build.mjs && firebase emulators:start --only hosting,functions",
+    "deploy": "node build.mjs && firebase deploy",
+    "deploy:sites": "node build.mjs && firebase deploy --only hosting"
+  }
+}

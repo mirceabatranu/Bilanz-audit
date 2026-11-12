@@ -1,0 +1,321 @@
+<title>Litigii de Muncă</title>
+<meta name="description" content="Litigii de muncă pentru angajați și angajatori: contestarea concedierii, sancțiuni disciplinare, drepturi salariale, expertiză contabilă de salarizare. Buchhaltung &amp; Bilanz Audit, București.">
+<link rel="canonical" href="https://litigiimunca.ro/">
+<link rel="alternate" hreflang="ro" href="https://litigiimunca.ro/">
+<link rel="alternate" hreflang="en" href="https://litigiimunca.ro/en/">
+<meta property="og:title" content="Litigii de muncă — angajați și angajatori | BBA">
+<meta property="og:description" content="Concediere, sancțiuni, salarii neplătite. Calculați termenul de contestare și cereți o analiză.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ro_RO">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: centered header, full-bleed band hero with audience switch, deadline calculator overlapping the band, stacked bands below */
+:root{
+  --bg:#F6F8F9; --surface:#FFFFFF; --ink:#0F2A2E; --muted:#557074; --line:#D6E0E2;
+  --petrol:#0F5C66; --petrol-ink:#F2FAFA; --sun:#E8B931; --sun-ink:#2A2104; --soft:#E5F0F1;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0A1618; --surface:#102225; --ink:#E3EFF0; --muted:#93AEB1; --line:#1F3A3E;
+  --petrol:#0C4048; --petrol-ink:#E3EFF0; --sun:#F0C84E; --sun-ink:#221A02; --soft:#13302F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0A1618; --surface:#102225; --ink:#E3EFF0; --muted:#93AEB1; --line:#1F3A3E;
+  --petrol:#0C4048; --petrol-ink:#E3EFF0; --sun:#F0C84E; --sun-ink:#221A02; --soft:#13302F; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+body:not(.en) [lang="en"]{display:none} body.en [lang="ro"]{display:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+.tagline{display:inline-block;font:600 .8rem/1 var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--sun);color:var(--sun-ink);padding:6px 10px;border-radius:6px}
+
+/* header */
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-block:18px;gap:16px}
+.top nav{display:flex;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:5px}
+.top nav a{text-decoration:none;padding:7px 14px;border-radius:99px;font-weight:600;font-size:.9rem}
+.top nav a:hover{background:var(--soft)}
+.logo{font:800 1.2rem/1 var(--display);text-decoration:none}
+.logo span{color:var(--petrol)}
+.lang{justify-self:end;display:flex;gap:4px}
+.lang button{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:600 .8rem/1 var(--body);padding:8px 11px;border-radius:8px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media (max-width:860px){.top{grid-template-columns:1fr auto}.top nav{display:none}}
+
+/* hero band */
+.band{background:var(--petrol);color:var(--petrol-ink);border-radius:28px;margin-inline:12px;padding-block:56px 140px;position:relative;overflow:hidden}
+.band::after{content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;border-radius:50%;border:44px solid color-mix(in srgb,var(--sun) 80%,transparent);opacity:.9}
+.band .wrap{position:relative;z-index:1}
+.switch{display:inline-flex;background:color-mix(in srgb,var(--petrol-ink) 14%,transparent);border-radius:99px;padding:5px;margin-bottom:28px}
+.switch button{border:0;background:none;color:inherit;font:600 .95rem/1 var(--body);padding:11px 20px;border-radius:99px;cursor:pointer}
+.switch button[aria-pressed="true"]{background:var(--sun);color:var(--sun-ink)}
+.band h1{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:800;max-width:15ch}
+.band .lead{font-size:1.15rem;max-width:54ch;margin-top:20px;opacity:.9}
+body:not([data-a="emp"]) [data-aud="emp"],body:not([data-a="boss"]) [data-aud="boss"]{display:none}
+
+/* calculator */
+.calc{margin-top:-104px;position:relative;z-index:2}
+.calc .box{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;box-shadow:0 18px 40px -24px rgba(8,40,44,.35)}
+.calc h2{font-size:1.6rem;margin-block:10px 8px}
+.calc p.sub{color:var(--muted);font-size:.95rem}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+label{display:grid;gap:6px;font-size:.88rem;font-weight:600}
+input,select,textarea{font:inherit;font-size:1rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%}
+.result{background:var(--soft);border-radius:16px;padding:22px;display:grid;gap:6px;align-content:center}
+.result .lbl{font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.result .date{font:800 clamp(1.8rem,4vw,2.6rem)/1.05 var(--display);color:var(--petrol);font-variant-numeric:tabular-nums}
+.result .left{font-weight:600}
+.result .left.late{color:#B3261E}
+.result small{color:var(--muted);font-size:.84rem;margin-top:6px}
+@media (max-width:820px){.calc .box{grid-template-columns:1fr}.fields{grid-template-columns:1fr}}
+
+/* deadlines strip */
+.deadlines{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:64px}
+.dl{border-left:4px solid var(--sun);padding:6px 0 6px 16px}
+.dl b{display:block;font:800 1.9rem/1 var(--display);font-variant-numeric:tabular-nums}
+.dl span{display:block;color:var(--muted);font-size:.92rem;margin-top:6px}
+.dl b span{display:inline;font-size:1rem;color:inherit;margin:0}
+.dl em{font-style:normal;font-size:.78rem;color:var(--petrol);font-weight:600}
+@media (max-width:820px){.deadlines{grid-template-columns:1fr 1fr}}
+
+section{padding-block:80px 0}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:28px}
+.head h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;max-width:20ch}
+.head p{color:var(--muted);max-width:44ch}
+
+/* services list per audience */
+.svc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.svc li{display:grid;grid-template-columns:44px 1fr;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px}
+.svc .ic{width:44px;height:44px;border-radius:12px;background:var(--soft);display:grid;place-items:center;color:var(--petrol)}
+.svc h3{font-size:1.15rem;margin-bottom:4px}
+.svc p{color:var(--muted);font-size:.95rem}
+@media (max-width:760px){.svc{grid-template-columns:1fr}}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--surface)}
+.why div{padding:28px;border-right:1px solid var(--line)}
+.why div:last-child{border-right:0}
+.why h3{font-size:1.25rem;margin-bottom:8px}
+.why p{color:var(--muted);font-size:.95rem}
+@media (max-width:820px){.why{grid-template-columns:1fr}.why div{border-right:0;border-bottom:1px solid var(--line)}.why div:last-child{border-bottom:0}}
+
+/* faq */
+.faq{max-width:780px;margin:0 auto}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin-bottom:10px}
+.faq summary{cursor:pointer;font:600 1.1rem/1.35 var(--display);list-style:none;display:flex;gap:14px;justify-content:space-between}
+.faq summary::after{content:"↓";color:var(--petrol)}
+.faq details[open] summary::after{content:"↑"}
+.faq details p{color:var(--muted);margin-top:10px}
+
+/* contact */
+.cta{background:var(--sun);color:var(--sun-ink);border-radius:28px;margin:80px 12px 0;padding-block:56px}
+.cta .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px}
+.cta h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800}
+.cta .info{display:grid;gap:12px;margin-top:22px;font-size:1rem}
+.cta .info div{overflow-wrap:anywhere}
+.cta .info b{display:block;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.cta form{background:var(--surface);color:var(--ink);border-radius:20px;padding:24px;display:grid;gap:14px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+textarea{min-height:110px;resize:vertical}
+.check{display:flex;gap:10px;font-weight:400;color:var(--muted)}
+.check input{width:auto;margin-top:5px}
+.send{justify-self:start;background:var(--petrol);color:var(--petrol-ink);border:0;border-radius:12px;padding:14px 24px;font:600 1rem/1 var(--body);cursor:pointer}
+.status{font-size:.92rem;background:var(--soft);padding:12px 14px;border-radius:12px}
+@media (max-width:820px){.cta .wrap{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}
+footer{padding-block:28px;font-size:.86rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+</style>
+
+<div class="wrap top">
+  <a class="logo" href="#top">litigii<span>munca</span>.ro</a>
+  <nav aria-label="Principal">
+    <a href="#termen"><span lang="ro">Termene</span><span lang="en">Deadlines</span></a>
+    <a href="#servicii"><span lang="ro">Servicii</span><span lang="en">Services</span></a>
+    <a href="#intrebari"><span lang="ro">Întrebări</span><span lang="en">FAQ</span></a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Limba / Language">
+    <button type="button" data-l="ro" aria-pressed="true">RO</button>
+    <button type="button" data-l="en" aria-pressed="false">EN</button>
+  </div>
+</div>
+
+<main id="top">
+  <div class="band">
+    <div class="wrap">
+      <div class="switch" role="group" aria-label="Public">
+        <button type="button" data-a="emp" aria-pressed="true"><span lang="ro">Sunt angajat</span><span lang="en">I'm an employee</span></button>
+        <button type="button" data-a="boss" aria-pressed="false"><span lang="ro">Sunt angajator</span><span lang="en">I'm an employer</span></button>
+      </div>
+      <div data-aud="emp">
+        <h1><span lang="ro">Concediat, sancționat sau neplătit?</span><span lang="en">Dismissed, disciplined or unpaid?</span></h1>
+        <p class="lead"><span lang="ro">Ai 45 de zile să contești concedierea. Verificăm decizia, calculăm ce ți se cuvine și pregătim contestația. În litigiile de muncă, angajatorul trebuie să dovedească legalitatea măsurii.</span><span lang="en">You have 45 days to challenge a dismissal. We review the decision, calculate what you are owed and prepare the claim. In employment disputes, the employer must prove the measure was lawful.</span></p>
+      </div>
+      <div data-aud="boss">
+        <h1><span lang="ro">O concediere bine făcută nu ajunge în instanță.</span><span lang="en">A properly run dismissal stays out of court.</span></h1>
+        <p class="lead"><span lang="ro">Sarcina probei vă aparține. Vă ajutăm cu procedura disciplinară, documentele de salarizare și apărarea în instanță, ca decizia să reziste unei contestații.</span><span lang="en">The burden of proof is yours. We help with disciplinary procedure, payroll records and court defence, so your decision holds up if it is challenged.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap calc" id="termen">
+    <div class="box">
+      <div>
+        <span class="tagline"><span lang="ro">Calculator de termen</span><span lang="en">Deadline calculator</span></span>
+        <h2><span lang="ro">Până când poți contesta?</span><span lang="en">How long do you have?</span></h2>
+        <p class="sub"><span lang="ro">Alege tipul măsurii și data la care ai primit-o.</span><span lang="en">Choose the type of measure and the date you received it.</span></p>
+        <div class="fields">
+          <label for="k-type"><span><span lang="ro">Măsura</span><span lang="en">Measure</span></span>
+            <select id="k-type">
+              <option value="45d" data-ro="Decizie de concediere (45 zile)" data-en="Dismissal decision (45 days)">Decizie de concediere (45 zile)</option>
+              <option value="30d" data-ro="Sancțiune disciplinară (30 zile)" data-en="Disciplinary sanction (30 days)">Sancțiune disciplinară (30 zile)</option>
+              <option value="3y" data-ro="Drepturi salariale neplătite (3 ani)" data-en="Unpaid wages (3 years)">Drepturi salariale neplătite (3 ani)</option>
+            </select></label>
+          <label for="k-date"><span><span lang="ro">Data comunicării</span><span lang="en">Date received</span></span><input id="k-date" type="date" value="2026-09-15"></label>
+        </div>
+      </div>
+      <div class="result" aria-live="polite">
+        <span class="lbl"><span lang="ro">Ultima zi pentru acțiune</span><span lang="en">Last day to file</span></span>
+        <span class="date" id="k-out">—</span>
+        <span class="left" id="k-left"></span>
+        <small lang="ro">Dacă ultima zi nu este lucrătoare, termenul se prelungește până la prima zi lucrătoare (nu luăm în calcul sărbătorile legale). Calcul orientativ.</small>
+        <small lang="en">If the last day is not a working day, the deadline moves to the next working day (public holidays not included). Indicative only.</small>
+      </div>
+    </div>
+
+    <div class="deadlines">
+      <div class="dl"><b>45</b><span lang="ro">zile pentru contestarea concedierii</span><span lang="en">days to challenge a dismissal</span><em>CM art. 268 (1) a</em></div>
+      <div class="dl"><b>30</b><span lang="ro">zile pentru contestarea sancțiunii</span><span lang="en">days to challenge a sanction</span><em>CM art. 252 (5)</em></div>
+      <div class="dl"><b>3 <span lang="ro">ani</span><span lang="en">yrs</span></b><span lang="ro">pentru salarii și alte drepturi bănești</span><span lang="en">for wages and other money claims</span><em>CM art. 268 (1) c</em></div>
+      <div class="dl"><b>0 lei</b><span lang="ro">taxă de timbru în litigiile de muncă</span><span lang="en">court fee in employment disputes</span><em>CM art. 270</em></div>
+    </div>
+  </div>
+
+  <section id="servicii">
+    <div class="wrap">
+      <div class="head">
+        <h2><span lang="ro">Ce facem pentru tine</span><span lang="en">What we do for you</span></h2>
+        <p><span lang="ro">Lista se schimbă după rolul ales mai sus. Echipa unește consultanța juridică cu experiența de salarizare și HR a Bilanz Audit.</span><span lang="en">This list follows the role chosen above. The team combines legal advice with Bilanz Audit's payroll and HR experience.</span></p>
+      </div>
+      <ul class="svc" data-aud="emp">
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span><div><h3><span lang="ro">Contestarea concedierii</span><span lang="en">Challenging a dismissal</span></h3><p lang="ro">Verificăm motivarea, preavizul și procedura. Cerem anularea, despăgubiri sau reintegrarea.</p><p lang="en">We check the reasons, notice and procedure, then seek annulment, compensation or reinstatement.</p></div></li>
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3><span lang="ro">Ore suplimentare neplătite</span><span lang="en">Unpaid overtime</span></h3><p lang="ro">Expertiză contabilă pe pontaje, state de plată și Revisal pentru a cuantifica exact suma datorată.</p><p lang="en">Accounting analysis of timesheets, payslips and Revisal to quantify exactly what is owed.</p></div></li>
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></span><div><h3><span lang="ro">Sancțiuni disciplinare</span><span lang="en">Disciplinary sanctions</span></h3><p lang="ro">Avertisment, reducere de salariu sau desfacere disciplinară: verificăm cercetarea prealabilă și termenele.</p><p lang="en">Warning, pay cut or disciplinary dismissal: we check the prior investigation and time limits.</p></div></li>
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></span><div><h3><span lang="ro">Salarii și bonusuri restante</span><span lang="en">Outstanding pay and bonuses</span></h3><p lang="ro">Calculăm drepturile pe ultimii 3 ani, inclusiv sporuri, concediu neefectuat și dobânzi.</p><p lang="en">We calculate entitlements for the last 3 years, including allowances, unused leave and interest.</p></div></li>
+      </ul>
+      <ul class="svc" data-aud="boss">
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></span><div><h3><span lang="ro">Cercetare disciplinară conformă</span><span lang="en">Compliant disciplinary process</span></h3><p lang="ro">Convocare, proces-verbal, decizie motivată și comunicare în termen, pas cu pas.</p><p lang="en">Notice, minutes, reasoned decision and timely delivery, step by step.</p></div></li>
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></span><div><h3><span lang="ro">Audit de salarizare și Revisal</span><span lang="en">Payroll and Revisal audit</span></h3><p lang="ro">Verificăm contractele, pontajele și statele de plată înainte să le verifice ITM sau instanța.</p><p lang="en">We check contracts, timesheets and payslips before the labour inspectorate or a court does.</p></div></li>
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span><div><h3><span lang="ro">Regulament intern și proceduri</span><span lang="en">Staff handbook and procedures</span></h3><p lang="ro">Documente interne care susțin deciziile de management și reduc riscul de contestație.</p><p lang="en">Internal documents that back management decisions and reduce the risk of challenge.</p></div></li>
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></span><div><h3><span lang="ro">Apărare în instanță</span><span lang="en">Court defence</span></h3><p lang="ro">Întâmpinare, probe și expertiză contabilă de parte când salariatul contestă decizia sau pretinde sume.</p><p lang="en">Defence brief, evidence and party accounting expert when an employee challenges a decision or claims money.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><h2><span lang="ro">De ce o firmă de contabilitate?</span><span lang="en">Why an accounting firm?</span></h2></div>
+      <div class="why">
+        <div><h3><span lang="ro">Cifrele sunt proba</span><span lang="en">The numbers are the evidence</span></h3><p lang="ro">Majoritatea litigiilor de muncă se reduc la salarii, ore și sporuri. Le calculăm din documentele sursă.</p><p lang="en">Most employment disputes come down to pay, hours and allowances. We calculate them from source documents.</p></div>
+        <div><h3><span lang="ro">Experiență de salarizare</span><span lang="en">Payroll experience</span></h3><p lang="ro">Bilanz Audit administrează personal și calcul salarial pentru firme, cu specialiști cu minimum 8 ani de pregătire.</p><p lang="en">Bilanz Audit runs HR administration and payroll for companies, with specialists trained for at least 8 years.</p></div>
+        <div><h3><span lang="ro">Un singur interlocutor</span><span lang="en">One point of contact</span></h3><p lang="ro">Consultanța juridică și expertiza contabilă lucrează împreună pe același dosar.</p><p lang="en">Legal advice and forensic accounting work together on the same file.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="intrebari">
+    <div class="wrap">
+      <div class="head" style="justify-content:center;text-align:center"><h2 style="margin-inline:auto"><span lang="ro">Întrebări frecvente</span><span lang="en">Common questions</span></h2></div>
+      <div class="faq">
+        <details open><summary><span lang="ro">Cine trebuie să dovedească în litigiul de muncă?</span><span lang="en">Who has to prove what in an employment dispute?</span></summary><p lang="ro">Angajatorul. Codul muncii (art. 272) pune sarcina probei în sarcina lui, care trebuie să depună dovezile până la prima zi de înfățișare.</p><p lang="en">The employer. The Labour Code (art. 272) puts the burden of proof on the employer, who must file evidence by the first hearing.</p></details>
+        <details><summary><span lang="ro">Plătesc taxă de timbru?</span><span lang="en">Do I pay a court fee?</span></summary><p lang="ro">Nu. Cauzele privind conflictele de muncă sunt scutite de taxa judiciară de timbru (art. 270 Codul muncii).</p><p lang="en">No. Employment disputes are exempt from court stamp duty (art. 270, Labour Code).</p></details>
+        <details><summary><span lang="ro">La ce instanță se depune contestația?</span><span lang="en">Which court hears the claim?</span></summary><p lang="ro">Tribunalul în a cărui rază își are domiciliul sau locul de muncă reclamantul.</p><p lang="en">The tribunal for the area where the claimant lives or works.</p></details>
+        <details><summary><span lang="ro">Ce pot obține dacă concedierea e anulată?</span><span lang="en">What can I get if the dismissal is annulled?</span></summary><p lang="ro">Despăgubiri egale cu salariile indexate și majorate de care ați fi beneficiat și, la cerere, reintegrarea pe post (art. 80 Codul muncii).</p><p lang="en">Compensation equal to the indexed and increased pay you would have received and, on request, reinstatement (art. 80, Labour Code).</p></details>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta" id="contact">
+    <div class="wrap">
+      <div>
+        <h2><span lang="ro">Ai un termen care curge? Scrie-ne azi.</span><span lang="en">Is a deadline running? Write to us today.</span></h2>
+        <div class="info">
+          <div><b><span lang="ro">Telefon / WhatsApp</span><span lang="en">Phone / WhatsApp</span></b><a href="tel:+40744328886">0744 328 886</a> · <a href="https://wa.me/40744328886" target="_blank" rel="noopener">WhatsApp</a></div>
+          <div><b>Email</b>bilanzaudit@gmail.com</div>
+          <div><b><span lang="ro">Adresa</span><span lang="en">Address</span></b><a href="https://maps.google.com/?q=Aleea+Ninsorii+26+Sector+3+Bucuresti" target="_blank" rel="noopener">Aleea Ninsorii nr. 26, ap. 6, Sector 3, București</a></div>
+          <div><b><span lang="ro">Firma</span><span lang="en">Firm</span></b>Buchhaltung &amp; Bilanz Audit · CUI 35926102 · J40/5123/2016</div>
+        </div>
+      </div>
+      <form id="f" novalidate>
+        <div class="row2">
+          <label for="f-name"><span><span lang="ro">Nume</span><span lang="en">Name</span></span><input id="f-name" required autocomplete="name"></label>
+          <label for="f-phone"><span><span lang="ro">Telefon</span><span lang="en">Phone</span></span><input id="f-phone" type="tel" autocomplete="tel"></label>
+        </div>
+        <label for="f-email">Email<input id="f-email" type="email" required autocomplete="email"></label>
+        <label for="f-msg"><span><span lang="ro">Ce s-a întâmplat?</span><span lang="en">What happened?</span></span><textarea id="f-msg" required data-ph-ro="Ex.: am primit decizia de concediere pe 15 septembrie." data-ph-en="E.g. I received my dismissal decision on 15 September."></textarea></label>
+        <label class="check" for="f-gdpr"><input id="f-gdpr" type="checkbox" required><span><span lang="ro">Sunt de acord cu prelucrarea datelor conform <a href="/confidentialitate/">politicii de confidențialitate</a>.</span><span lang="en">I agree to my data being processed under the <a href="/en/privacy/">privacy policy</a>.</span></span></label>
+        <button class="send" type="submit"><span lang="ro">Trimite mesajul</span><span lang="en">Send message</span></button>
+        <p class="status" id="f-status" role="status" hidden></p>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Buchhaltung &amp; Bilanz Audit · <a href="https://www.bilanzaudit.ro/" target="_blank" rel="noopener">bilanzaudit.ro</a> · <a href="https://infractiunifiscale.ro" target="_blank" rel="noopener">infractiunifiscale.ro</a> · <a href="https://atragerearaspunderii.ro" target="_blank" rel="noopener">atragerearaspunderii.ro</a></span>
+    <span lang="ro">Informații generale, nu consultanță juridică. · <a href="/confidentialitate/">Confidențialitate</a></span><span lang="en">General information, not legal advice. · <a href="/en/privacy/">Privacy</a></span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":["ProfessionalService","LegalService"],"name":"Litigii de Muncă — Legal BBA","url":"https://litigiimunca.ro/","description":"Litigii de muncă pentru angajați și angajatori: contestarea concedierii, sancțiuni disciplinare, drepturi salariale, expertiză contabilă de salarizare.","telephone":"+40744328886","email":"bilanzaudit@gmail.com","areaServed":"RO","availableLanguage":["ro","en"],"address":{"@type":"PostalAddress","streetAddress":"Aleea Ninsorii nr. 26, ap. 6, Sector 3","addressLocality":"București","addressCountry":"RO"},"parentOrganization":{"@type":"Organization","name":"Buchhaltung & Bilanz Audit","url":"https://www.bilanzaudit.ro/","taxID":"35926102"},"knowsAbout":["litigii de muncă","contestație decizie de concediere","Codul muncii","sancțiuni disciplinare","ore suplimentare","salarizare"]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Cât timp am pentru a contesta concedierea?","acceptedAnswer":{"@type":"Answer","text":"45 de zile calendaristice de la comunicarea deciziei (art. 268 alin. 1 lit. a Codul muncii)."}},
+{"@type":"Question","name":"Cine trebuie să dovedească în litigiul de muncă?","acceptedAnswer":{"@type":"Answer","text":"Angajatorul (art. 272 Codul muncii)."}},
+{"@type":"Question","name":"Plătesc taxă de timbru?","acceptedAnswer":{"@type":"Answer","text":"Nu, litigiile de muncă sunt scutite de taxa judiciară de timbru (art. 270 Codul muncii)."}}]}]}
+</script>
+<script>
+(function(){
+  function lang(){return document.body.classList.contains('en')?'en':'ro'}
+  var D={ro:['duminică','luni','marți','miercuri','joi','vineri','sâmbătă'],en:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']};
+  var M={ro:['ianuarie','februarie','martie','aprilie','mai','iunie','iulie','august','septembrie','octombrie','noiembrie','decembrie'],en:['January','February','March','April','May','June','July','August','September','October','November','December']};
+  var t=document.getElementById('k-type'),d=document.getElementById('k-date'),out=document.getElementById('k-out'),left=document.getElementById('k-left');
+  function calc(){
+    var l=lang(),v=d.value;
+    if(!v){out.textContent='—';left.textContent=l==='en'?'Pick a date.':'Alege o dată.';return}
+    var p=v.split('-').map(Number),x=new Date(p[0],p[1]-1,p[2]);
+    if(t.value==='45d')x.setDate(x.getDate()+45);else if(t.value==='30d')x.setDate(x.getDate()+30);else x.setFullYear(x.getFullYear()+3);
+    while(x.getDay()===0||x.getDay()===6)x.setDate(x.getDate()+1);
+    out.textContent=x.getDate()+' '+M[l][x.getMonth()]+' '+x.getFullYear();
+    var now=new Date();now.setHours(0,0,0,0);
+    var n=Math.round((x-now)/864e5);
+    left.classList.toggle('late',n<0);
+    left.textContent=n<0?(l==='en'?'The deadline passed '+(-n)+' days ago.':'Termenul a expirat acum '+(-n)+' zile.')
+      :n===0?(l==='en'?'Today is the last day.':'Azi este ultima zi.')
+      :D[l][x.getDay()]+' · '+(l==='en'?n+' days left':'mai ai '+n+' zile');
+  }
+  t.addEventListener('change',calc);d.addEventListener('input',calc);
+  function setAud(a){
+    document.body.dataset.a=a;
+    document.querySelectorAll('.switch button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.a===a))});
+  }
+  document.querySelectorAll('.switch button').forEach(function(b){b.addEventListener('click',function(){setAud(b.dataset.a)})});
+  function setLang(l){
+    document.body.classList.toggle('en',l==='en');document.documentElement.lang=l;
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.l===l))});
+    document.querySelectorAll('[data-ph-ro]').forEach(function(e){e.placeholder=l==='en'?e.dataset.phEn:e.dataset.phRo});
+    document.querySelectorAll('option[data-ro]').forEach(function(o){o.textContent=l==='en'?o.dataset.en:o.dataset.ro});
+    try{localStorage.setItem('lang',l)}catch(e){}
+    calc();
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
+  var saved='ro';try{saved=localStorage.getItem('lang')||'ro'}catch(e){}
+  setAud('emp');setLang(saved);
+})();
+</script>

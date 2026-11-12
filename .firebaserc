@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "site-uri-bilanz-audit"
+  },
+  "targets": {
+    "site-uri-bilanz-audit": {
+      "hosting": {
+        "infractiuni": ["infractiunifiscale"],
+        "atragere": ["atragerearaspunderii"],
+        "litigii": ["litigiimunca"]
+      }
+    }
+  }
+}

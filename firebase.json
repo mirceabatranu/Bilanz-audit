@@ -1,0 +1,60 @@
+{
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "runtime": "nodejs22",
+      "ignore": ["node_modules", ".git", "*.local"]
+    }
+  ],
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "hosting": [
+    {
+      "target": "infractiuni",
+      "public": "dist/infractiunifiscale.ro",
+      "cleanUrls": true,
+      "rewrites": [{ "source": "/api/contact", "function": { "functionId": "contact", "region": "europe-west1" } }],
+      "headers": [
+        { "source": "**", "headers": [
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+          { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+          { "key": "Strict-Transport-Security", "value": "max-age=31536000" }
+        ] },
+        { "source": "**/*.@(js|svg)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }] }
+      ]
+    },
+    {
+      "target": "atragere",
+      "public": "dist/atragerearaspunderii.ro",
+      "cleanUrls": true,
+      "rewrites": [{ "source": "/api/contact", "function": { "functionId": "contact", "region": "europe-west1" } }],
+      "headers": [
+        { "source": "**", "headers": [
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+          { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+          { "key": "Strict-Transport-Security", "value": "max-age=31536000" }
+        ] },
+        { "source": "**/*.@(js|svg)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }] }
+      ]
+    },
+    {
+      "target": "litigii",
+      "public": "dist/litigiimunca.ro",
+      "cleanUrls": true,
+      "rewrites": [{ "source": "/api/contact", "function": { "functionId": "contact", "region": "europe-west1" } }],
+      "headers": [
+        { "source": "**", "headers": [
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+          { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+          { "key": "Strict-Transport-Security", "value": "max-age=31536000" }
+        ] },
+        { "source": "**/*.@(js|svg)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }] }
+      ]
+    }
+  ]
+}

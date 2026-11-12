@@ -1,0 +1,298 @@
+<title>Atragerea Răspunderii</title>
+<meta name="description" content="Apărarea administratorilor în acțiuni de atragere a răspunderii: art. 169 Legea 85/2014, răspundere solidară ANAF, expertiza cauzelor insolvenței. Buchhaltung &amp; Bilanz Audit.">
+<link rel="canonical" href="https://atragerearaspunderii.ro/">
+<link rel="alternate" hreflang="ro" href="https://atragerearaspunderii.ro/">
+<link rel="alternate" hreflang="en" href="https://atragerearaspunderii.ro/en/">
+<meta property="og:title" content="Atragerea răspunderii administratorilor | BBA">
+<meta property="og:description" content="Insolvență, ANAF, răspundere personală: expertiză contabilă și consultanță juridică pentru administratori și asociați.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ro_RO">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: fixed left rail (nav + contact) beside a scrolling column; risk checker in the hero, comparison table, card grid */
+:root{
+  --bg:#F1F3EF; --surface:#FFFFFF; --ink:#16231D; --muted:#56635B; --line:#D3D9D2;
+  --rail:#173B2F; --rail-ink:#E9EFE9; --brass:#9C6F22; --brass-soft:#F3E8D2; --ok:#2E7D4F; --warn:#B7791F; --bad:#B23A2E;
+  --display:"Newsreader",Georgia,"Times New Roman",serif;
+  --body:"Work Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1512; --surface:#15201B; --ink:#E4EBE6; --muted:#9DABA2; --line:#28362F;
+  --rail:#0A120E; --rail-ink:#E4EBE6; --brass:#D9A75A; --brass-soft:#2C2416; --ok:#5DBB82; --warn:#E0A84B; --bad:#E06A5C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1512; --surface:#15201B; --ink:#E4EBE6; --muted:#9DABA2; --line:#28362F;
+  --rail:#0A120E; --rail-ink:#E4EBE6; --brass:#D9A75A; --brass-soft:#2C2416; --ok:#5DBB82; --warn:#E0A84B; --bad:#E06A5C; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--body)}
+body:not(.en) [lang="en"]{display:none} body.en [lang="ro"]{display:none}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.12;margin:0;text-wrap:balance}
+p{margin:0}
+.kicker{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+
+.shell{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100%}
+.rail{background:var(--rail);color:var(--rail-ink);position:sticky;top:0;height:100vh;padding:32px 28px;display:flex;flex-direction:column;gap:32px}
+.brand{font:600 1.35rem/1.15 var(--display);text-decoration:none}
+.brand small{display:block;font:500 .72rem/1.4 var(--body);letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin-top:6px}
+.rail nav{display:grid;gap:4px}
+.rail nav a{text-decoration:none;padding:8px 0;border-bottom:1px solid color-mix(in srgb,var(--rail-ink) 14%,transparent);font-size:.95rem;opacity:.85}
+.rail nav a:hover{opacity:1;color:var(--brass)}
+.rail .quick{margin-top:auto;font-size:.88rem;display:grid;gap:6px}
+.rail .quick b{font:600 1.3rem/1.2 var(--display);color:var(--brass)}
+.lang{display:inline-flex;gap:0;border:1px solid color-mix(in srgb,var(--rail-ink) 30%,transparent);border-radius:99px;overflow:hidden;align-self:flex-start}
+.lang button{background:none;border:0;color:inherit;font:600 .78rem/1 var(--body);padding:8px 14px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--brass);color:var(--rail)}
+
+.col{padding-inline:clamp(20px,5vw,72px);padding-block:56px 0;display:grid;gap:96px;max-width:1080px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:48px;align-items:start}
+.hero h1{font-size:clamp(2.4rem,5.2vw,4.2rem);margin-block:16px 22px;letter-spacing:-.01em}
+.hero h1 i{color:var(--brass)}
+.hero .lead{font-size:1.1rem;color:var(--muted);max-width:52ch}
+.pill-link{display:inline-block;margin-top:28px;padding:14px 26px;border-radius:99px;background:var(--rail);color:var(--rail-ink);text-decoration:none;font-weight:600}
+.checker{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+.checker h2{font-size:1.35rem}
+.checker p.hint{font-size:.85rem;color:var(--muted);margin-block:6px 16px}
+.checker label{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;padding:9px 0;border-top:1px solid var(--line);font-size:.92rem;cursor:pointer}
+.checker input{margin-top:5px;accent-color:var(--brass);width:16px;height:16px}
+.checker .lit{font-size:.72rem;color:var(--muted);white-space:nowrap;margin-top:3px}
+.meter{margin-top:16px;display:grid;gap:8px}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:var(--ok);transition:width .3s,background .3s}
+.verdict{font-weight:600;font-size:.95rem}
+@media (max-width:1100px){.hero{grid-template-columns:1fr}}
+
+/* routes table */
+.sec-title{display:grid;gap:10px;margin-bottom:28px;max-width:60ch}
+.sec-title h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+.sec-title p{color:var(--muted)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:16px 18px;border-bottom:1px solid var(--line)}
+thead th{font:500 1.1rem/1.25 var(--display);background:var(--brass-soft)}
+thead th small{display:block;font:500 .75rem/1.4 var(--body);color:var(--muted);margin-top:4px}
+tbody th{font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);width:150px}
+tbody tr:last-child>*{border-bottom:0}
+
+/* services grid */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.svc{padding:24px;border-radius:14px;background:var(--surface);border:1px solid var(--line);display:grid;gap:10px;align-content:start}
+.svc .who{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+.svc h3{font-size:1.3rem}
+.svc p{color:var(--muted);font-size:.93rem}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.grid{grid-template-columns:1fr}}
+
+/* quote band */
+.band{background:var(--rail);color:var(--rail-ink);border-radius:18px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.band .big{font:500 clamp(3rem,8vw,5.5rem)/1 var(--display);color:var(--brass)}
+.band p{font:500 clamp(1.2rem,2.2vw,1.6rem)/1.35 var(--display)}
+.band small{display:block;font:400 .88rem/1.5 var(--body);opacity:.7;margin-top:10px}
+@media (max-width:620px){.band{grid-template-columns:1fr}}
+
+/* faq */
+.qa{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 40px}
+.qa div{border-top:2px solid var(--ink);padding-top:16px}
+.qa h3{font-size:1.2rem;margin-bottom:8px}
+.qa p{color:var(--muted);font-size:.94rem}
+@media (max-width:760px){.qa{grid-template-columns:1fr}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;padding-bottom:64px}
+.contact ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:14px}
+.contact li{display:grid;gap:2px}
+.contact li span.k{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.contact li span.v{overflow-wrap:anywhere}
+form{display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+label{display:grid;gap:6px;font-size:.85rem;font-weight:500}
+input,select,textarea{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:110px;resize:vertical}
+.role{display:flex;flex-wrap:wrap;gap:8px}
+.role label{display:flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:99px;font-weight:500;cursor:pointer}
+.role input{width:auto;accent-color:var(--brass)}
+.check{display:flex;gap:10px;font-weight:400;color:var(--muted)}
+.check input{width:auto;margin-top:4px}
+button.submit{justify-self:start;padding:13px 26px;border-radius:99px;border:0;background:var(--brass);color:var(--surface);font:600 .95rem/1 var(--body);cursor:pointer}
+.status{font-size:.9rem;padding:12px 14px;border-radius:10px;background:var(--brass-soft)}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding-block:24px 40px;font-size:.84rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr}
+  .rail{position:sticky;top:env(safe-area-inset-top,0px);height:auto;flex-direction:row;align-items:center;padding:14px 20px;gap:16px;z-index:10}
+  .rail nav,.rail .quick{display:none}
+  .brand small{display:none}
+  .lang{margin-left:auto;align-self:center}
+}
+@media (prefers-reduced-motion:reduce){.bar span{transition:none}}
+</style>
+
+<div class="shell">
+  <aside class="rail">
+    <a class="brand" href="#top">atragerea<br>raspunderii.ro<small>Legal BBA · Bilanz Audit</small></a>
+    <nav aria-label="Principal">
+      <a href="#verificare"><span lang="ro">Verificare rapidă</span><span lang="en">Quick check</span></a>
+      <a href="#forme"><span lang="ro">Formele răspunderii</span><span lang="en">Types of liability</span></a>
+      <a href="#servicii"><span lang="ro">Servicii</span><span lang="en">Services</span></a>
+      <a href="#intrebari"><span lang="ro">Întrebări</span><span lang="en">FAQ</span></a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Limba / Language">
+      <button type="button" data-l="ro" aria-pressed="true">RO</button>
+      <button type="button" data-l="en" aria-pressed="false">EN</button>
+    </div>
+    <div class="quick">
+      <span lang="ro">Consultanță la</span><span lang="en">Call us on</span>
+      <b>0744 328 886</b>
+      <span>bilanzaudit@gmail.com</span>
+    </div>
+  </aside>
+
+  <main class="col" id="top">
+    <section class="hero" id="verificare">
+      <div>
+        <p class="kicker"><span lang="ro">Răspunderea administratorilor</span><span lang="en">Director liability</span></p>
+        <h1><span lang="ro">Firma a intrat în insolvență. <i>Patrimoniul tău</i> nu trebuie să o urmeze.</span><span lang="en">The company went insolvent. <i>Your own assets</i> don't have to follow.</span></h1>
+        <p class="lead"><span lang="ro">Lichidatorul sau ANAF pot cere ca administratorul să plătească personal datoriile firmei. Răspunderea nu este automată: trebuie dovedită o faptă, o vină și legătura cu prejudiciul. Noi verificăm fiecare dintre ele în documentele contabile.</span><span lang="en">The liquidator or ANAF can ask a director to pay the company's debts personally. Liability is not automatic: they must prove an act, fault and a link to the loss. We test each of these against the accounting records.</span></p>
+        <a class="pill-link" href="#contact"><span lang="ro">Programează o analiză a dosarului</span><span lang="en">Book a case review</span></a>
+      </div>
+      <div class="checker" aria-live="polite">
+        <h2><span lang="ro">Verificare orientativă</span><span lang="en">Quick self-check</span></h2>
+        <p class="hint"><span lang="ro">Bifați situațiile care s-au întâmplat în firmă. Corespund faptelor din art. 169 Legea 85/2014.</span><span lang="en">Tick what happened in the company. Each maps to art. 169 of Law 85/2014.</span></p>
+        <label for="c1"><input id="c1" type="checkbox"><span><span lang="ro">Contabilitatea nu a fost ținută la zi sau lipsesc documente</span><span lang="en">Books were not kept up to date or records are missing</span></span><span class="lit">lit. d</span></label>
+        <label for="c2"><input id="c2" type="checkbox"><span><span lang="ro">Documentele nu au fost predate lichidatorului</span><span lang="en">Records were not handed to the liquidator</span></span><span class="lit">lit. d</span></label>
+        <label for="c3"><input id="c3" type="checkbox"><span><span lang="ro">Bani sau bunuri ale firmei au fost folosite în interes propriu</span><span lang="en">Company money or assets were used personally</span></span><span class="lit">lit. a</span></label>
+        <label for="c4"><input id="c4" type="checkbox"><span><span lang="ro">Activitatea a continuat deși datoriile nu mai puteau fi plătite</span><span lang="en">Trading continued after debts could no longer be paid</span></span><span class="lit">lit. c</span></label>
+        <label for="c5"><input id="c5" type="checkbox"><span><span lang="ro">Un creditor a fost plătit preferențial înainte de încetarea plăților</span><span lang="en">One creditor was paid first just before payments stopped</span></span><span class="lit">lit. g</span></label>
+        <label for="c6"><input id="c6" type="checkbox"><span><span lang="ro">Active vândute sub valoare sau scoase din firmă</span><span lang="en">Assets were sold below value or moved out</span></span><span class="lit">lit. e</span></label>
+        <div class="meter"><div class="bar"><span id="bar"></span></div><p class="verdict" id="verdict"></p></div>
+      </div>
+    </section>
+
+    <section id="forme">
+      <div class="sec-title">
+        <p class="kicker"><span lang="ro">Trei căi, trei apărări</span><span lang="en">Three routes, three defences</span></p>
+        <h2><span lang="ro">Cine poate cere răspunderea personală</span><span lang="en">Who can pursue you personally</span></h2>
+        <p><span lang="ro">Fiecare procedură are alt titular, altă instanță și alt termen. Apărarea începe cu identificarea corectă a căii.</span><span lang="en">Each route has a different claimant, forum and deadline. The defence starts by identifying the right one.</span></p>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th></th>
+            <th><span lang="ro">Insolvență</span><span lang="en">Insolvency</span><small>art. 169 L. 85/2014</small></th>
+            <th><span lang="ro">Fiscală solidară</span><span lang="en">Joint tax liability</span><small>art. 25–27 Cod proc. fiscală</small></th>
+            <th><span lang="ro">Societară</span><span lang="en">Corporate</span><small>art. 72–73 L. 31/1990</small></th></tr></thead>
+          <tbody>
+            <tr><th><span lang="ro">Cine cere</span><span lang="en">Claimant</span></th><td lang="ro">Administratorul judiciar, lichidatorul sau creditorii</td><td lang="en">Judicial administrator, liquidator or creditors</td><td lang="ro">ANAF, prin decizie</td><td lang="en">ANAF, by decision</td><td lang="ro">Societatea, prin hotărârea asociaților</td><td lang="en">The company, by shareholder resolution</td></tr>
+            <tr><th><span lang="ro">Cine răspunde</span><span lang="en">Who is liable</span></th><td lang="ro">Membrii organelor de conducere, inclusiv administratorii de fapt</td><td lang="en">Management, including de facto directors</td><td lang="ro">Administratori, asociați și alte persoane prevăzute de lege</td><td lang="en">Directors, shareholders and others named by law</td><td lang="ro">Administratorii, față de societate</td><td lang="en">Directors, towards the company</td></tr>
+            <tr><th><span lang="ro">Unde</span><span lang="en">Forum</span></th><td lang="ro">Judecătorul-sindic</td><td lang="en">Insolvency judge</td><td lang="ro">Contestație administrativă, apoi contencios</td><td lang="en">Administrative appeal, then court</td><td lang="ro">Instanța civilă</td><td lang="en">Civil court</td></tr>
+            <tr><th><span lang="ro">Termen-cheie</span><span lang="en">Key deadline</span></th><td lang="ro">Prescripție de 3 ani (art. 171)</td><td lang="en">3-year limitation (art. 171)</td><td lang="ro">45 de zile pentru contestație</td><td lang="en">45 days to appeal</td><td lang="ro">Prescripția generală de 3 ani</td><td lang="en">General 3-year limitation</td></tr>
+            <tr><th><span lang="ro">Ce aducem</span><span lang="en">Our input</span></th><td lang="ro">Expertiza cauzelor insolvenței</td><td lang="en">Expert report on causes of insolvency</td><td lang="ro">Verificarea condițiilor și a sumelor</td><td lang="en">Testing the legal conditions and amounts</td><td lang="ro">Analiza deciziilor de gestiune</td><td lang="en">Review of management decisions</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="servicii">
+      <div class="sec-title">
+        <p class="kicker"><span lang="ro">Servicii</span><span lang="en">Services</span></p>
+        <h2><span lang="ro">Contabilitate și drept, în același dosar</span><span lang="en">Accounting and law in the same file</span></h2>
+      </div>
+      <div class="grid">
+        <article class="svc"><span class="who"><span lang="ro">Administratori</span><span lang="en">Directors</span></span><h3><span lang="ro">Apărare în acțiunea art. 169</span><span lang="en">Defence against art. 169 claims</span></h3><p lang="ro">Răspuns la cererea lichidatorului, probe, întâmpinare și susținere în fața judecătorului-sindic.</p><p lang="en">Response to the liquidator's claim, evidence, defence brief and support before the insolvency judge.</p></article>
+        <article class="svc"><span class="who"><span lang="ro">Expertiză</span><span lang="en">Forensic</span></span><h3><span lang="ro">Cauzele reale ale insolvenței</span><span lang="en">The real causes of insolvency</span></h3><p lang="ro">Arătăm, pe cifre, că insolvența a venit din piață, clienți neplătitori sau costuri externe, nu din fapta administratorului.</p><p lang="en">We show with figures that insolvency came from the market, unpaid invoices or external costs, not the director's conduct.</p></article>
+        <article class="svc"><span class="who">ANAF</span><h3><span lang="ro">Contestarea răspunderii solidare</span><span lang="en">Appealing joint tax liability</span></h3><p lang="ro">Verificăm dacă sunt îndeplinite condițiile legale și dacă sumele atribuite vă aparțin.</p><p lang="en">We check whether the legal conditions are met and whether the amounts assigned to you are right.</p></article>
+        <article class="svc"><span class="who"><span lang="ro">Contabilitate</span><span lang="en">Accounting</span></span><h3><span lang="ro">Reconstituirea evidențelor</span><span lang="en">Rebuilding the records</span></h3><p lang="ro">Refacem balanțe și registre din extrase și facturi, pentru a înlătura prezumția de contabilitate neținută.</p><p lang="en">We rebuild trial balances and ledgers from statements and invoices to rebut the missing-records presumption.</p></article>
+        <article class="svc"><span class="who"><span lang="ro">Practicieni și creditori</span><span lang="en">Practitioners and creditors</span></span><h3><span lang="ro">Analiza fundamentării cererii</span><span lang="en">Building the claim</span></h3><p lang="ro">Rapoarte privind cauzele insolvenței și calculul prejudiciului pentru lichidatori și creditori.</p><p lang="en">Reports on causes of insolvency and loss calculations for liquidators and creditors.</p></article>
+        <article class="svc"><span class="who"><span lang="ro">Prevenție</span><span lang="en">Prevention</span></span><h3><span lang="ro">Audit pentru administratori</span><span lang="en">Director risk review</span></h3><p lang="ro">Înainte de dizolvare, cesiune de părți sociale sau o cerere de insolvență, verificăm ce riscuri personale rămân.</p><p lang="en">Before winding up, selling shares or filing for insolvency, we check what personal risks remain.</p></article>
+      </div>
+    </section>
+
+    <div class="band">
+      <span class="big">3</span>
+      <p><span lang="ro">Fapta, vinovăția și legătura de cauzalitate trebuie dovedite toate. Lipsa uneia singure înseamnă respingerea cererii.</span><span lang="en">The act, fault and causation must all be proven. If one is missing, the claim fails.</span><small lang="ro">Răspunderea din art. 169 este o răspundere civilă delictuală, nu o garanție automată pentru datoriile firmei.</small><small lang="en">Art. 169 liability is tort liability, not an automatic guarantee of company debts.</small></p>
+    </div>
+
+    <section id="intrebari">
+      <div class="sec-title"><p class="kicker"><span lang="ro">Întrebări frecvente</span><span lang="en">Common questions</span></p><h2><span lang="ro">Ce trebuie să știe un administrator</span><span lang="en">What a director should know</span></h2></div>
+      <div class="qa">
+        <div><h3><span lang="ro">Am fost administrator doar formal. Răspund?</span><span lang="en">I was only a nominal director. Am I liable?</span></h3><p lang="ro">Se poate răspunde și ca administrator de drept, chiar fără implicare reală. Contează însă ce fapte vă sunt imputate și ce dovezi există. Administratorul de fapt poate răspunde la rândul său.</p><p lang="en">Formal directors can be held liable even without real involvement, but what matters is which acts are alleged and what evidence exists. The de facto director can be liable too.</p></div>
+        <div><h3><span lang="ro">Am predat firma altcuiva. Mai pot fi chemat?</span><span lang="en">I sold the company. Can they still come after me?</span></h3><p lang="ro">Da, pentru perioada în care ați condus societatea. De aceea un audit înainte de cesiune vă protejează.</p><p lang="en">Yes, for the period you ran the company. A review before the sale protects you.</p></div>
+        <div><h3><span lang="ro">Lipsa documentelor înseamnă automat răspundere?</span><span lang="en">Do missing records mean automatic liability?</span></h3><p lang="ro">Nu automat, dar creează o prezumție greu de răsturnat. Reconstituirea evidenței contabile este adesea cea mai eficientă apărare.</p><p lang="en">Not automatically, but it creates a presumption that is hard to rebut. Rebuilding the books is often the most effective defence.</p></div>
+        <div><h3><span lang="ro">Ce fac dacă ANAF îmi trimite decizie de răspundere solidară?</span><span lang="en">ANAF sent me a joint-liability decision. What now?</span></h3><p lang="ro">Aveți 45 de zile pentru contestație. Trimiteți-ne decizia cât mai repede pentru verificarea condițiilor și a sumelor.</p><p lang="en">You have 45 days to appeal. Send us the decision quickly so we can check the conditions and the amounts.</p></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <p class="kicker">Contact</p>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);margin-top:10px"><span lang="ro">Trimiteți-ne documentele primite</span><span lang="en">Send us what you received</span></h2>
+        <ul>
+          <li><span class="k"><span lang="ro">Firma</span><span lang="en">Firm</span></span><span class="v">Buchhaltung &amp; Bilanz Audit · CUI 35926102 · J40/5123/2016</span></li>
+          <li><span class="k"><span lang="ro">Adresa</span><span lang="en">Address</span></span><span class="v"><a href="https://maps.google.com/?q=Aleea+Ninsorii+26+Sector+3+Bucuresti" target="_blank" rel="noopener">Aleea Ninsorii nr. 26, ap. 6, Sector 3, București</a></span></li>
+          <li><span class="k"><span lang="ro">Telefon / WhatsApp</span><span lang="en">Phone / WhatsApp</span></span><span class="v"><a href="tel:+40744328886">0744 328 886</a> · <a href="https://wa.me/40744328886" target="_blank" rel="noopener">WhatsApp</a></span></li>
+          <li><span class="k">Email</span><span class="v">bilanzaudit@gmail.com</span></li>
+          <li><span class="k">Web</span><span class="v"><a href="https://www.bilanzaudit.ro/" target="_blank" rel="noopener">bilanzaudit.ro</a></span></li>
+        </ul>
+      </div>
+      <form id="f" novalidate>
+        <fieldset style="border:0;padding:0;margin:0;display:grid;gap:8px">
+          <legend style="font-size:.85rem;font-weight:500;margin-bottom:6px"><span lang="ro">Sunteți</span><span lang="en">You are</span></legend>
+          <div class="role">
+            <label for="r1"><input id="r1" type="radio" name="role" value="administrator" checked><span lang="ro">Administrator</span><span lang="en">Director</span></label>
+            <label for="r2"><input id="r2" type="radio" name="role" value="asociat"><span lang="ro">Asociat</span><span lang="en">Shareholder</span></label>
+            <label for="r3"><input id="r3" type="radio" name="role" value="practician"><span lang="ro">Lichidator / creditor</span><span lang="en">Liquidator / creditor</span></label>
+          </div>
+        </fieldset>
+        <label for="f-name"><span><span lang="ro">Nume</span><span lang="en">Name</span></span><input id="f-name" required autocomplete="name"></label>
+        <label for="f-email">Email<input id="f-email" type="email" required autocomplete="email"></label>
+        <label for="f-phone"><span><span lang="ro">Telefon</span><span lang="en">Phone</span></span><input id="f-phone" type="tel" autocomplete="tel"></label>
+        <label for="f-msg"><span><span lang="ro">Situația pe scurt</span><span lang="en">Your situation</span></span><textarea id="f-msg" required data-ph-ro="Ex.: am primit cererea lichidatorului, termen în 20 de zile." data-ph-en="E.g. I received the liquidator's claim, hearing in 20 days."></textarea></label>
+        <label class="check" for="f-gdpr"><input id="f-gdpr" type="checkbox" required><span><span lang="ro">Sunt de acord cu prelucrarea datelor conform <a href="/confidentialitate/">politicii de confidențialitate</a>.</span><span lang="en">I agree to my data being processed under the <a href="/en/privacy/">privacy policy</a>.</span></span></label>
+        <button class="submit" type="submit"><span lang="ro">Trimite</span><span lang="en">Send</span></button>
+        <p class="status" id="f-status" role="status" hidden></p>
+      </form>
+    </section>
+
+    <footer>
+      <span>© 2026 Buchhaltung &amp; Bilanz Audit · <a href="https://infractiunifiscale.ro" target="_blank" rel="noopener">infractiunifiscale.ro</a> · <a href="https://litigiimunca.ro" target="_blank" rel="noopener">litigiimunca.ro</a></span>
+      <span lang="ro">Informații generale, nu consultanță juridică. · <a href="/confidentialitate/">Confidențialitate</a></span><span lang="en">General information, not legal advice. · <a href="/en/privacy/">Privacy</a></span>
+    </footer>
+  </main>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":["ProfessionalService","LegalService"],"name":"Atragerea Răspunderii — Legal BBA","url":"https://atragerearaspunderii.ro/","description":"Apărarea administratorilor și asociaților în acțiuni de atragere a răspunderii (art. 169 Legea 85/2014), răspundere solidară ANAF și expertiza cauzelor insolvenței.","telephone":"+40744328886","email":"bilanzaudit@gmail.com","areaServed":"RO","availableLanguage":["ro","en"],"address":{"@type":"PostalAddress","streetAddress":"Aleea Ninsorii nr. 26, ap. 6, Sector 3","addressLocality":"București","addressCountry":"RO"},"parentOrganization":{"@type":"Organization","name":"Buchhaltung & Bilanz Audit","url":"https://www.bilanzaudit.ro/","taxID":"35926102"},"knowsAbout":["atragerea răspunderii administratorului","art. 169 Legea 85/2014","răspundere solidară ANAF","insolvență","expertiză contabilă"]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Am fost administrator doar formal. Răspund?","acceptedAnswer":{"@type":"Answer","text":"Se poate răspunde și ca administrator de drept; contează faptele imputate și probele. Administratorul de fapt poate răspunde și el."}},
+{"@type":"Question","name":"Ce fac dacă ANAF îmi trimite decizie de răspundere solidară?","acceptedAnswer":{"@type":"Answer","text":"Aveți 45 de zile pentru contestație administrativă."}}]}]}
+</script>
+<script>
+(function(){
+  var V={ro:['Nicio situație bifată. Risc redus, dar merită o verificare înainte de orice cesiune sau dizolvare.','Risc moderat. Una sau două fapte pot fi suficiente pentru o cerere a lichidatorului.','Risc ridicat. Recomandăm o analiză a documentelor cât mai curând.'],
+         en:['Nothing ticked. Low risk, but worth a review before any sale or winding-up.','Moderate risk. One or two of these can be enough for a liquidator\'s claim.','High risk. We recommend a document review as soon as possible.']};
+  var boxes=[].slice.call(document.querySelectorAll('.checker input')),bar=document.getElementById('bar'),vd=document.getElementById('verdict');
+  function lang(){return document.body.classList.contains('en')?'en':'ro'}
+  function score(){
+    var n=boxes.filter(function(b){return b.checked}).length,lvl=n===0?0:n<3?1:2;
+    bar.style.width=Math.max(6,n/boxes.length*100)+'%';
+    bar.style.background=['var(--ok)','var(--warn)','var(--bad)'][lvl];
+    vd.textContent=V[lang()][lvl];
+  }
+  boxes.forEach(function(b){b.addEventListener('change',score)});
+  function setLang(l){
+    document.body.classList.toggle('en',l==='en');document.documentElement.lang=l;
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.l===l))});
+    document.querySelectorAll('[data-ph-ro]').forEach(function(e){e.placeholder=l==='en'?e.dataset.phEn:e.dataset.phRo});
+    try{localStorage.setItem('lang',l)}catch(e){}
+    score();
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
+  var saved='ro';try{saved=localStorage.getItem('lang')||'ro'}catch(e){}
+  setLang(saved);
+})();
+</script>

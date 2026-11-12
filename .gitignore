@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.firebase/
+*.local
+firebase-debug*.log
+
+# Original claude.ai demo pages (superseded by src/pages)
+infractiunifiscale.ro/
+atragerearaspunderii.ro/
+litigiimunca.ro/
