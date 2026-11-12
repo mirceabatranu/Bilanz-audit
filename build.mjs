@@ -13,7 +13,6 @@ const COMPANY = {
   name: 'Buchhaltung & Bilanz Audit',
   cui: '35926102',
   reg: 'J40/5123/2016',
-  seat: 'Aleea Ninsorii nr. 26, ap. 6, Sector 3, București',
   office: 'Splaiul Unirii nr. 16, et. 1, ap. 108, 030139 București',
   phone: '0744.328.886',
   email: 'bilanzaudit@gmail.com',
@@ -172,7 +171,7 @@ function privacy(domain, lang) {
   <p class="meta">Ultima actualizare: ${TODAY}</p>
   <p>Protecția datelor dumneavoastră cu caracter personal este importantă pentru noi. Această pagină explică ce date prelucrăm prin ${domain}, de ce și ce drepturi aveți, în conformitate cu Regulamentul (UE) 2016/679 (GDPR). Site-ul ${domain} aparține ${c.name} și se completează cu <a href="${c.policy}" rel="noopener">politica de protecție a datelor de pe bilanzaudit.ro</a>.</p>
   <h2>1. Operatorul</h2>
-  <p><strong>${c.name} SRL</strong>, CUI ${c.cui}, nr. Reg. Com. ${c.reg}, cu sediul social în ${c.seat}.<br>Birou și corespondență: ${c.office}.<br>Email: ${c.email} · Telefon: ${c.phone}</p>
+  <p><strong>${c.name} SRL</strong>, CUI ${c.cui}, nr. Reg. Com. ${c.reg}, cu sediul în ${c.office}.<br>Email: ${c.email} · Telefon: ${c.phone}</p>
   <h2>2. Ce date prelucrăm</h2>
   <ul>
     <li><strong>Datele din formularul de contact</strong>, pe care ni le transmiteți voluntar: nume, email, telefon (opțional), conținutul mesajului și, după caz, stadiul situației sau calitatea dumneavoastră (de ex. administrator, angajat).</li>
@@ -198,7 +197,7 @@ function privacy(domain, lang) {
   <p class="meta">Last updated: ${TODAY}</p>
   <p>We take the protection of your personal data seriously. This page explains what data we process through ${domain}, why, and what rights you have under Regulation (EU) 2016/679 (GDPR). ${domain} belongs to ${c.name}, and this page supplements the <a href="${c.policy}" rel="noopener">data protection policy on bilanzaudit.ro</a> (in Romanian).</p>
   <h2>1. Data controller</h2>
-  <p><strong>${c.name} SRL</strong>, tax ID ${c.cui}, trade register ${c.reg}, registered office at ${c.seat}, Romania.<br>Office and correspondence: ${c.office}, Romania.<br>Email: ${c.email} · Phone: +40 744 328 886</p>
+  <p><strong>${c.name} SRL</strong>, tax ID ${c.cui}, trade register ${c.reg}, address ${c.office}, Romania.<br>Email: ${c.email} · Phone: +40 744 328 886</p>
   <h2>2. What we process</h2>
   <ul>
     <li><strong>Contact form data</strong> you choose to send: name, email, phone (optional), your message and, where asked, where your case stands or your role (e.g. director, employee).</li>
