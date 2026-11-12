@@ -10,12 +10,12 @@
     invalid: 'Please fill in your name, a valid email, a message, and tick the consent box.',
     sending: 'Sending…',
     ok: 'Thank you. We received your message and will reply as soon as possible, usually within one working day.',
-    err: 'The message could not be sent. Please try again, or call us on 0744 328 886.'
+    err: 'The message could not be sent. Please try again, or call us on 0744.328.886.'
   } : {
     invalid: 'Completați numele, un email valid, mesajul și bifați acordul.',
     sending: 'Se trimite…',
     ok: 'Vă mulțumim. Am primit mesajul și vă răspundem cât mai curând, de regulă într-o zi lucrătoare.',
-    err: 'Mesajul nu a putut fi trimis. Încercați din nou sau sunați la 0744 328 886.'
+    err: 'Mesajul nu a putut fi trimis. Încercați din nou sau sunați la 0744.328.886.'
   };
   function val(keys) {
     for (var i = 0; i < keys.length; i++) {
