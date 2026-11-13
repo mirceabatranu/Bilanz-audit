@@ -68,7 +68,7 @@ exports.contact = onRequest(
     try {
       const r = await fetch('https://api.resend.com/emails', {
         method: 'POST',
-        headers: { Authorization: `Bearer ${RESEND_API_KEY.value()}`, 'Content-Type': 'application/json' },
+        headers: { Authorization: `Bearer ${RESEND_API_KEY.value().trim()}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
           from: MAIL_FROM.value(),
           to: MAIL_TO.value().split(',').map((x) => x.trim()),
