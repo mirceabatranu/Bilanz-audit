@@ -5,9 +5,18 @@
   "targets": {
     "site-uri-bilanz-audit": {
       "hosting": {
-        "infractiuni": ["infractiunifiscale"],
-        "atragere": ["atragerearaspunderii"],
-        "litigii": ["litigiimunca"]
+        "infractiuni": [
+          "infractiunifiscale"
+        ],
+        "atragere": [
+          "atragerearaspunderii"
+        ],
+        "litigii": [
+          "litigiimunca"
+        ],
+        "bilanz": [
+          "bilanzaudit"
+        ]
       }
     }
   }

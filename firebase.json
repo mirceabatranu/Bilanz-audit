@@ -4,7 +4,11 @@
       "source": "functions",
       "codebase": "default",
       "runtime": "nodejs22",
-      "ignore": ["node_modules", ".git", "*.local"]
+      "ignore": [
+        "node_modules",
+        ".git",
+        "*.local"
+      ]
     }
   ],
   "firestore": {
@@ -15,45 +19,372 @@
       "target": "infractiuni",
       "public": "dist/infractiunifiscale.ro",
       "cleanUrls": true,
-      "rewrites": [{ "source": "/api/contact", "function": { "functionId": "contact", "region": "europe-west1" } }],
+      "rewrites": [
+        {
+          "source": "/api/contact",
+          "function": {
+            "functionId": "contact",
+            "region": "europe-west1"
+          }
+        }
+      ],
       "headers": [
-        { "source": "**", "headers": [
-          { "key": "X-Content-Type-Options", "value": "nosniff" },
-          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-          { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-          { "key": "Strict-Transport-Security", "value": "max-age=31536000" }
-        ] },
-        { "source": "**/*.@(js|svg)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }] }
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(js|svg)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=86400"
+            }
+          ]
+        }
       ]
     },
     {
       "target": "atragere",
       "public": "dist/atragerearaspunderii.ro",
       "cleanUrls": true,
-      "rewrites": [{ "source": "/api/contact", "function": { "functionId": "contact", "region": "europe-west1" } }],
+      "rewrites": [
+        {
+          "source": "/api/contact",
+          "function": {
+            "functionId": "contact",
+            "region": "europe-west1"
+          }
+        }
+      ],
       "headers": [
-        { "source": "**", "headers": [
-          { "key": "X-Content-Type-Options", "value": "nosniff" },
-          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-          { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-          { "key": "Strict-Transport-Security", "value": "max-age=31536000" }
-        ] },
-        { "source": "**/*.@(js|svg)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }] }
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(js|svg)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=86400"
+            }
+          ]
+        }
       ]
     },
     {
       "target": "litigii",
       "public": "dist/litigiimunca.ro",
       "cleanUrls": true,
-      "rewrites": [{ "source": "/api/contact", "function": { "functionId": "contact", "region": "europe-west1" } }],
+      "rewrites": [
+        {
+          "source": "/api/contact",
+          "function": {
+            "functionId": "contact",
+            "region": "europe-west1"
+          }
+        }
+      ],
       "headers": [
-        { "source": "**", "headers": [
-          { "key": "X-Content-Type-Options", "value": "nosniff" },
-          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-          { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-          { "key": "Strict-Transport-Security", "value": "max-age=31536000" }
-        ] },
-        { "source": "**/*.@(js|svg)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }] }
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(js|svg)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=86400"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "bilanz",
+      "public": "dist/bilanzaudit.ro",
+      "cleanUrls": true,
+      "trailingSlash": true,
+      "redirects": [
+        {
+          "source": "/servicii{,/}",
+          "destination": "/#servicii",
+          "type": 301
+        },
+        {
+          "source": "/home{,/}",
+          "destination": "/",
+          "type": 301
+        },
+        {
+          "source": "/contact{,/}",
+          "destination": "/#contact",
+          "type": 301
+        },
+        {
+          "source": "/promovam-antreprenorii-romani{,/}",
+          "destination": "/",
+          "type": 301
+        },
+        {
+          "source": "/newsletter{,/}",
+          "destination": "/",
+          "type": 301
+        },
+        {
+          "source": "/manage-subscriptions{,/}",
+          "destination": "/",
+          "type": 301
+        },
+        {
+          "source": "/politica-cookies{,/}",
+          "destination": "/protectia-datelor-cu-caracter-personal/#cookies",
+          "type": 301
+        },
+        {
+          "source": "/contabilitate-financiara{,/}",
+          "destination": "/contabilitate/",
+          "type": 301
+        },
+        {
+          "source": "/contabilitate-de-gestiune{,/}",
+          "destination": "/contabilitate/",
+          "type": 301
+        },
+        {
+          "source": "/contabilitate-de-gestiune-2{,/}",
+          "destination": "/contabilitate/",
+          "type": 301
+        },
+        {
+          "source": "/contabilitate-fiscala{,/}",
+          "destination": "/contabilitate/",
+          "type": 301
+        },
+        {
+          "source": "/servicii-financiare-si-de-trezorerie{,/}",
+          "destination": "/contabilitate/",
+          "type": 301
+        },
+        {
+          "source": "/consultanta-fiscala-2{,/}",
+          "destination": "/consultanta-fiscala/",
+          "type": 301
+        },
+        {
+          "source": "/consultanta-financiara{,/}",
+          "destination": "/consultanta-fiscala/",
+          "type": 301
+        },
+        {
+          "source": "/consultanta-financiara-2{,/}",
+          "destination": "/consultanta-fiscala/",
+          "type": 301
+        },
+        {
+          "source": "/consultanta-financiara-3{,/}",
+          "destination": "/consultanta-fiscala/",
+          "type": 301
+        },
+        {
+          "source": "/administrare-personal{,/}",
+          "destination": "/resurse-umane-salarizare/",
+          "type": 301
+        },
+        {
+          "source": "/administrare-personal-2{,/}",
+          "destination": "/resurse-umane-salarizare/",
+          "type": 301
+        },
+        {
+          "source": "/administrare-personal-3{,/}",
+          "destination": "/resurse-umane-salarizare/",
+          "type": 301
+        },
+        {
+          "source": "/calcul-salarial{,/}",
+          "destination": "/resurse-umane-salarizare/",
+          "type": 301
+        },
+        {
+          "source": "/salarizare{,/}",
+          "destination": "/resurse-umane-salarizare/",
+          "type": 301
+        },
+        {
+          "source": "/consultanta-de-management{,/}",
+          "destination": "/resurse-umane-salarizare/",
+          "type": 301
+        },
+        {
+          "source": "/inceperea-unui-business{,/}",
+          "destination": "/infiintare-firma/",
+          "type": 301
+        },
+        {
+          "source": "/domiciliere-si-administrare{,/}",
+          "destination": "/infiintare-firma/",
+          "type": 301
+        },
+        {
+          "source": "/expertiza-juridica{,/}",
+          "destination": "/expertiza-contabila/",
+          "type": 301
+        },
+        {
+          "source": "/consultanta-juridica{,/}",
+          "destination": "/legal-bba/",
+          "type": 301
+        },
+        {
+          "source": "/consultanta-juridica-2{,/}",
+          "destination": "/legal-bba/",
+          "type": 301
+        },
+        {
+          "source": "/servicii-juridice{,/}",
+          "destination": "/legal-bba/",
+          "type": 301
+        },
+        {
+          "source": "/servicii-de-raportare{,/}",
+          "destination": "/#alte-servicii",
+          "type": 301
+        },
+        {
+          "source": "/fuziune-si-achizitii{,/}",
+          "destination": "/#alte-servicii",
+          "type": 301
+        },
+        {
+          "source": "/blog{,/}",
+          "destination": "/articole/",
+          "type": 301
+        },
+        {
+          "source": "/blog-post/ce-legatura-are-o-factura-de-stornare-cu-evaziunea-fiscala{,/}",
+          "destination": "/articole/factura-de-stornare-evaziune-fiscala/",
+          "type": 301
+        },
+        {
+          "source": "/blog-post/**",
+          "destination": "/articole/",
+          "type": 301
+        },
+        {
+          "source": "/20{14,23}/**",
+          "destination": "/articole/",
+          "type": 301
+        },
+        {
+          "source": "/feed{,/**}",
+          "destination": "/",
+          "type": 301
+        },
+        {
+          "source": "/wp-login.php",
+          "destination": "/",
+          "type": 301
+        },
+        {
+          "source": "/wp-admin{,/**}",
+          "destination": "/",
+          "type": 301
+        }
+      ],
+      "rewrites": [
+        {
+          "source": "/api/contact",
+          "function": {
+            "functionId": "contact",
+            "region": "europe-west1"
+          }
+        }
+      ],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(js|svg)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=86400"
+            }
+          ]
+        }
       ]
     }
   ]

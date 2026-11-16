@@ -44,6 +44,15 @@
       website: val(['website']),
       elapsed: Date.now() - t0
     };
+    // Extra fields (quote form): every element with data-x="<key>"; checkbox groups are joined with ", ".
+    var extra = {};
+    [].forEach.call(f.querySelectorAll('[data-x]'), function (el) {
+      var k = el.getAttribute('data-x');
+      if (el.type === 'checkbox') { if (el.checked) extra[k] = (extra[k] ? extra[k] + ', ' : '') + el.value; }
+      else if (el.type === 'radio') { if (el.checked) extra[k] = el.value; }
+      else if (el.value.trim()) extra[k] = el.value.trim();
+    });
+    data.extra = extra;
     btn.disabled = true;
     show(T.sending);
     fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })

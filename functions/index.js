@@ -16,6 +16,20 @@ const SITES = {
   'infractiunifiscale.ro': 'Infracțiuni fiscale',
   'atragerearaspunderii.ro': 'Atragerea răspunderii',
   'litigiimunca.ro': 'Litigii de muncă',
+  'bilanzaudit.ro': 'Bilanz Audit',
+};
+
+// Optional company fields sent by the bilanzaudit.ro quote form (data-x="<key>").
+const EXTRA = {
+  company: 'Firma',
+  cui: 'CUI',
+  address: 'Sediu',
+  services: 'Servicii',
+  vat: 'Plătitor TVA',
+  profitTax: 'Plătitor impozit',
+  anaf: 'Reprezentare ANAF',
+  employees: 'Angajați',
+  docs: 'Documente / lună',
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -41,9 +55,19 @@ exports.contact = onRequest(
       stage: clip(b.stage, 120),
       role: clip(b.role, 60),
     };
-    if (!msg.name || !EMAIL_RE.test(msg.email) || msg.message.length < 5 || b.consent !== true) {
+    const extra = {};
+    if (b.extra && typeof b.extra === 'object') {
+      for (const k of Object.keys(EXTRA)) {
+        const v = clip(b.extra[k], 300);
+        if (v) extra[k] = v;
+      }
+    }
+    const isQuote = Object.keys(extra).length > 0;
+    // A quote request carries its information in the company fields, so the free-text message is optional there.
+    if (!msg.name || !EMAIL_RE.test(msg.email) || (!isQuote && msg.message.length < 5) || b.consent !== true) {
       return res.status(400).json({ ok: false, error: 'invalid' });
     }
+    if (isQuote) msg.extra = extra;
     const siteLabel = SITES[msg.site] || msg.site || 'necunoscut';
 
     const ref = await getFirestore().collection('mesajeContact').add({
@@ -63,6 +87,7 @@ exports.contact = onRequest(
       msg.stage && ['Stadiu', msg.stage],
       msg.role && ['Rol', msg.role],
       ['Limba', msg.lang.toUpperCase()],
+      ...Object.entries(extra).map(([k, v]) => [EXTRA[k], v]),
     ].filter(Boolean);
 
     try {
@@ -73,8 +98,10 @@ exports.contact = onRequest(
           from: MAIL_FROM.value(),
           to: MAIL_TO.value().split(',').map((x) => x.trim()),
           reply_to: msg.email,
-          subject: `[${msg.site}] Mesaj nou de la ${msg.name}`,
-          text: rows.map(([k, v]) => `${k}: ${v}`).join('\n') + `\n\n${msg.message}\n\nID: ${ref.id}`,
+          subject: isQuote
+            ? `[${msg.site}] Cerere de ofertă: ${extra.company || msg.name}`
+            : `[${msg.site}] Mesaj nou de la ${msg.name}`,
+          text: rows.map(([k, v]) => `${k}: ${v}`).join('\n') + `\n\n${msg.message || '-'}\n\nID: ${ref.id}`,
           html: `<table cellpadding="6" style="font-family:Arial,sans-serif;font-size:14px;border-collapse:collapse">${rows
             .map(([k, v]) => `<tr><td style="color:#666">${html(k)}</td><td><strong>${html(v)}</strong></td></tr>`)
             .join('')}</table><p style="font-family:Arial,sans-serif;font-size:14px;white-space:pre-wrap">${html(msg.message)}</p><p style="font-family:Arial,sans-serif;font-size:12px;color:#999">ID Firestore: ${ref.id}</p>`,
