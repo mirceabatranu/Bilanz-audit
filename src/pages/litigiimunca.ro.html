@@ -128,6 +128,41 @@ textarea{min-height:110px;resize:vertical}
 @media (max-width:820px){.cta .wrap{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}
 footer{padding-block:28px;font-size:.86rem;color:var(--muted)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+
+/* ---------- depth: shadows ---------- */
+:root{
+  --sh-sm:0 1px 2px rgba(8,40,44,.06),0 2px 6px rgba(8,40,44,.07);
+  --sh-md:0 2px 4px rgba(8,40,44,.05),0 12px 26px -8px rgba(8,40,44,.18);
+  --sh-lg:0 4px 8px rgba(8,40,44,.05),0 26px 52px -16px rgba(8,40,44,.32);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --sh-sm:0 1px 2px rgba(0,0,0,.4),0 2px 6px rgba(0,0,0,.3);
+  --sh-md:0 2px 4px rgba(0,0,0,.35),0 12px 26px -8px rgba(0,0,0,.55);
+  --sh-lg:0 4px 10px rgba(0,0,0,.4),0 28px 56px -14px rgba(0,0,0,.7)}}
+:root[data-theme="dark"]{
+  --sh-sm:0 1px 2px rgba(0,0,0,.4),0 2px 6px rgba(0,0,0,.3);
+  --sh-md:0 2px 4px rgba(0,0,0,.35),0 12px 26px -8px rgba(0,0,0,.55);
+  --sh-lg:0 4px 10px rgba(0,0,0,.4),0 28px 56px -14px rgba(0,0,0,.7)}
+.top nav,.lang button{box-shadow:var(--sh-sm)}
+.band{box-shadow:var(--sh-lg)}
+.switch button[aria-pressed="true"]{box-shadow:0 4px 12px -4px rgba(0,0,0,.45)}
+.calc .box{box-shadow:var(--sh-lg)}
+.result{box-shadow:inset 0 1px 3px rgba(8,40,44,.08)}
+.svc li{box-shadow:var(--sh-md);transition:transform .2s,box-shadow .2s}
+.svc li:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.svc .ic{box-shadow:var(--sh-sm)}
+.why{box-shadow:var(--sh-md)}
+.faq details{box-shadow:var(--sh-sm);transition:box-shadow .2s}
+.faq details:hover,.faq details[open]{box-shadow:var(--sh-md)}
+.cta{box-shadow:var(--sh-lg)}
+.cta form{box-shadow:var(--sh-lg)}
+.send{box-shadow:var(--sh-md);transition:transform .2s,box-shadow .2s}
+.send:hover{transform:translateY(-2px);box-shadow:var(--sh-lg)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+.more{margin-top:22px;font-weight:600}
+.more a{color:var(--petrol)}
+h3 a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:color-mix(in srgb,currentColor 35%,transparent)}
+h3 a:hover{text-decoration-color:currentColor}
 </style>
 
 <div class="wrap top">
@@ -175,7 +210,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
               <option value="30d" data-ro="Sancțiune disciplinară (30 zile)" data-en="Disciplinary sanction (30 days)">Sancțiune disciplinară (30 zile)</option>
               <option value="3y" data-ro="Drepturi salariale neplătite (3 ani)" data-en="Unpaid wages (3 years)">Drepturi salariale neplătite (3 ani)</option>
             </select></label>
-          <label for="k-date"><span><span lang="ro">Data comunicării</span><span lang="en">Date received</span></span><input id="k-date" type="date" value="2026-09-15"></label>
+          <label for="k-date"><span><span lang="ro">Data comunicării</span><span lang="en">Date received</span></span><input id="k-date" type="date"></label>
         </div>
       </div>
       <div class="result" aria-live="polite">
@@ -193,6 +228,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
       <div class="dl"><b>3 <span lang="ro">ani</span><span lang="en">yrs</span></b><span lang="ro">pentru salarii și alte drepturi bănești</span><span lang="en">for wages and other money claims</span><em>CM art. 268 (1) c</em></div>
       <div class="dl"><b>0 lei</b><span lang="ro">taxă de timbru în litigiile de muncă</span><span lang="en">court fee in employment disputes</span><em>CM art. 270</em></div>
     </div>
+    <p class="more"><a lang="ro" href="/termene-contestatie/">Toate termenele de contestare →</a><a lang="en" href="/en/deadlines/">All deadlines →</a></p>
   </div>
 
   <section id="servicii">
@@ -202,13 +238,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
         <p><span lang="ro">Lista se schimbă după rolul ales mai sus. Echipa unește consultanța juridică cu experiența de salarizare și HR a Bilanz Audit.</span><span lang="en">This list follows the role chosen above. The team combines legal advice with Bilanz Audit's payroll and HR experience.</span></p>
       </div>
       <ul class="svc" data-aud="emp">
-        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span><div><h3><span lang="ro">Contestarea concedierii</span><span lang="en">Challenging a dismissal</span></h3><p lang="ro">Verificăm motivarea, preavizul și procedura. Cerem anularea, despăgubiri sau reintegrarea.</p><p lang="en">We check the reasons, notice and procedure, then seek annulment, compensation or reinstatement.</p></div></li>
-        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3><span lang="ro">Ore suplimentare neplătite</span><span lang="en">Unpaid overtime</span></h3><p lang="ro">Expertiză contabilă pe pontaje, state de plată și Revisal pentru a cuantifica exact suma datorată.</p><p lang="en">Accounting analysis of timesheets, payslips and Revisal to quantify exactly what is owed.</p></div></li>
-        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></span><div><h3><span lang="ro">Sancțiuni disciplinare</span><span lang="en">Disciplinary sanctions</span></h3><p lang="ro">Avertisment, reducere de salariu sau desfacere disciplinară: verificăm cercetarea prealabilă și termenele.</p><p lang="en">Warning, pay cut or disciplinary dismissal: we check the prior investigation and time limits.</p></div></li>
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span><div><h3><a lang="ro" href="/contestare-concediere/">Contestarea concedierii</a><a lang="en" href="/en/challenging-dismissal/">Challenging a dismissal</a></h3><p lang="ro">Verificăm motivarea, preavizul și procedura. Cerem anularea, despăgubiri sau reintegrarea.</p><p lang="en">We check the reasons, notice and procedure, then seek annulment, compensation or reinstatement.</p></div></li>
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3><a lang="ro" href="/ore-suplimentare-neplatite/">Ore suplimentare neplătite</a><a lang="en" href="/en/unpaid-overtime/">Unpaid overtime</a></h3><p lang="ro">Expertiză contabilă pe pontaje, state de plată și Revisal pentru a cuantifica exact suma datorată.</p><p lang="en">Accounting analysis of timesheets, payslips and Revisal to quantify exactly what is owed.</p></div></li>
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></span><div><h3><a lang="ro" href="/sanctiuni-disciplinare/">Sancțiuni disciplinare</a><a lang="en" href="/en/disciplinary-sanctions/">Disciplinary sanctions</a></h3><p lang="ro">Avertisment, reducere de salariu sau desfacere disciplinară: verificăm cercetarea prealabilă și termenele.</p><p lang="en">Warning, pay cut or disciplinary dismissal: we check the prior investigation and time limits.</p></div></li>
         <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></span><div><h3><span lang="ro">Salarii și bonusuri restante</span><span lang="en">Outstanding pay and bonuses</span></h3><p lang="ro">Calculăm drepturile pe ultimii 3 ani, inclusiv sporuri, concediu neefectuat și dobânzi.</p><p lang="en">We calculate entitlements for the last 3 years, including allowances, unused leave and interest.</p></div></li>
       </ul>
       <ul class="svc" data-aud="boss">
-        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></span><div><h3><span lang="ro">Cercetare disciplinară conformă</span><span lang="en">Compliant disciplinary process</span></h3><p lang="ro">Convocare, proces-verbal, decizie motivată și comunicare în termen, pas cu pas.</p><p lang="en">Notice, minutes, reasoned decision and timely delivery, step by step.</p></div></li>
+        <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></span><div><h3><a lang="ro" href="/sanctiuni-disciplinare/">Cercetare disciplinară conformă</a><a lang="en" href="/en/disciplinary-sanctions/">Compliant disciplinary process</a></h3><p lang="ro">Convocare, proces-verbal, decizie motivată și comunicare în termen, pas cu pas.</p><p lang="en">Notice, minutes, reasoned decision and timely delivery, step by step.</p></div></li>
         <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></span><div><h3><span lang="ro">Audit de salarizare și Revisal</span><span lang="en">Payroll and Revisal audit</span></h3><p lang="ro">Verificăm contractele, pontajele și statele de plată înainte să le verifice ITM sau instanța.</p><p lang="en">We check contracts, timesheets and payslips before the labour inspectorate or a court does.</p></div></li>
         <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span><div><h3><span lang="ro">Regulament intern și proceduri</span><span lang="en">Staff handbook and procedures</span></h3><p lang="ro">Documente interne care susțin deciziile de management și reduc riscul de contestație.</p><p lang="en">Internal documents that back management decisions and reduce the risk of challenge.</p></div></li>
         <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></span><div><h3><span lang="ro">Apărare în instanță</span><span lang="en">Court defence</span></h3><p lang="ro">Întâmpinare, probe și expertiză contabilă de parte când salariatul contestă decizia sau pretinde sume.</p><p lang="en">Defence brief, evidence and party accounting expert when an employee challenges a decision or claims money.</p></div></li>
@@ -231,7 +267,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
     <div class="wrap">
       <div class="head" style="justify-content:center;text-align:center"><h2 style="margin-inline:auto"><span lang="ro">Întrebări frecvente</span><span lang="en">Common questions</span></h2></div>
       <div class="faq">
-        <details open><summary><span lang="ro">Cine trebuie să dovedească în litigiul de muncă?</span><span lang="en">Who has to prove what in an employment dispute?</span></summary><p lang="ro">Angajatorul. Codul muncii (art. 272) pune sarcina probei în sarcina lui, care trebuie să depună dovezile până la prima zi de înfățișare.</p><p lang="en">The employer. The Labour Code (art. 272) puts the burden of proof on the employer, who must file evidence by the first hearing.</p></details>
+        <details open><summary><span lang="ro">Cât timp am pentru a contesta concedierea?</span><span lang="en">How long do I have to challenge a dismissal?</span></summary><p lang="ro">45 de zile calendaristice de la data la care ți-a fost comunicată decizia de concediere (art. 268 alin. 1 lit. a Codul muncii). Dacă ultima zi cade într-o zi nelucrătoare, termenul se prelungește până la prima zi lucrătoare.</p><p lang="en">45 calendar days from the date the dismissal decision was communicated to you (art. 268 (1) a, Labour Code). If the last day is not a working day, the deadline moves to the next working day.</p></details>
+        <details><summary><span lang="ro">Cât timp am pentru a contesta o sancțiune disciplinară?</span><span lang="en">How long do I have to challenge a disciplinary sanction?</span></summary><p lang="ro">30 de zile calendaristice de la comunicarea deciziei de sancționare (art. 252 alin. 5 Codul muncii).</p><p lang="en">30 calendar days from the date the sanction decision was communicated (art. 252 (5), Labour Code).</p></details>
+        <details><summary><span lang="ro">Cine trebuie să dovedească în litigiul de muncă?</span><span lang="en">Who has to prove what in an employment dispute?</span></summary><p lang="ro">Angajatorul. Codul muncii (art. 272) pune sarcina probei în sarcina lui, care trebuie să depună dovezile până la prima zi de înfățișare.</p><p lang="en">The employer. The Labour Code (art. 272) puts the burden of proof on the employer, who must file evidence by the first hearing.</p></details>
         <details><summary><span lang="ro">Plătesc taxă de timbru?</span><span lang="en">Do I pay a court fee?</span></summary><p lang="ro">Nu. Cauzele privind conflictele de muncă sunt scutite de taxa judiciară de timbru (art. 270 Codul muncii).</p><p lang="en">No. Employment disputes are exempt from court stamp duty (art. 270, Labour Code).</p></details>
         <details><summary><span lang="ro">La ce instanță se depune contestația?</span><span lang="en">Which court hears the claim?</span></summary><p lang="ro">Tribunalul în a cărui rază își are domiciliul sau locul de muncă reclamantul.</p><p lang="en">The tribunal for the area where the claimant lives or works.</p></details>
         <details><summary><span lang="ro">Ce pot obține dacă concedierea e anulată?</span><span lang="en">What can I get if the dismissal is annulled?</span></summary><p lang="ro">Despăgubiri egale cu salariile indexate și majorate de care ați fi beneficiat și, la cerere, reintegrarea pe post (art. 80 Codul muncii).</p><p lang="en">Compensation equal to the indexed and increased pay you would have received and, on request, reinstatement (art. 80, Labour Code).</p></details>
@@ -245,7 +283,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
         <h2><span lang="ro">Ai un termen care curge? Scrie-ne azi.</span><span lang="en">Is a deadline running? Write to us today.</span></h2>
         <div class="info">
           <div><b><span lang="ro">Telefon / WhatsApp</span><span lang="en">Phone / WhatsApp</span></b><a href="tel:+40744328886">0744.328.886</a> · <a href="https://wa.me/40744328886" target="_blank" rel="noopener">WhatsApp</a></div>
-          <div><b>Email</b>bilanzaudit@gmail.com</div>
+          <div><b>Email</b><a href="mailto:office@bilanzaudit.ro">office@bilanzaudit.ro</a></div>
+          <div><b><span lang="ro">Program</span><span lang="en">Hours</span></b><span lang="ro">Luni–Vineri, 9:00–17:00</span><span lang="en">Monday–Friday, 9:00–17:00</span></div>
           <div><b><span lang="ro">Adresa</span><span lang="en">Address</span></b><a href="https://maps.app.goo.gl/R3jmTdMv92TMPsMo9" target="_blank" rel="noopener">Splaiul Unirii nr. 16, et. 1, ap. 108, 030139 București</a></div>
           <div><b><span lang="ro">Firma</span><span lang="en">Firm</span></b>Buchhaltung &amp; Bilanz Audit · CUI 35926102 · J40/5123/2016</div>
         </div>
@@ -267,14 +306,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Buchhaltung &amp; Bilanz Audit · <a href="https://www.bilanzaudit.ro/" target="_blank" rel="noopener">bilanzaudit.ro</a> · <a href="https://infractiunifiscale.ro" target="_blank" rel="noopener">infractiunifiscale.ro</a> · <a href="https://atragerearaspunderii.ro" target="_blank" rel="noopener">atragerearaspunderii.ro</a></span>
+    <span>© 2026 Buchhaltung &amp; Bilanz Audit · <a href="https://www.bilanzaudit.ro/" target="_blank" rel="noopener">bilanzaudit.ro</a></span>
     <span lang="ro">Informații generale, nu consultanță juridică. · <a href="/confidentialitate/">Confidențialitate</a></span><span lang="en">General information, not legal advice. · <a href="/en/privacy/">Privacy</a></span>
   </div>
 </footer>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":["ProfessionalService","LegalService"],"name":"Litigii de Muncă — Legal BBA","url":"https://litigiimunca.ro/","description":"Litigii de muncă pentru angajați și angajatori: contestarea concedierii, sancțiuni disciplinare, drepturi salariale, expertiză contabilă de salarizare.","telephone":"+40744328886","email":"bilanzaudit@gmail.com","areaServed":"RO","availableLanguage":["ro","en"],"address":{"@type":"PostalAddress","streetAddress":"Splaiul Unirii nr. 16, et. 1, ap. 108","postalCode":"030139","addressLocality":"București","addressCountry":"RO"},"geo":{"@type":"GeoCoordinates","latitude":44.4232208,"longitude":26.1090618},"hasMap":"https://maps.app.goo.gl/R3jmTdMv92TMPsMo9","parentOrganization":{"@type":"Organization","name":"Buchhaltung & Bilanz Audit","url":"https://www.bilanzaudit.ro/","taxID":"35926102"},"knowsAbout":["litigii de muncă","contestație decizie de concediere","Codul muncii","sancțiuni disciplinare","ore suplimentare","salarizare"]},
+{"@type":["ProfessionalService","LegalService"],"name":"Litigii de Muncă — Legal BBA","url":"https://litigiimunca.ro/","description":"Litigii de muncă pentru angajați și angajatori: contestarea concedierii, sancțiuni disciplinare, drepturi salariale, expertiză contabilă de salarizare.","telephone":"+40744328886","email":"office@bilanzaudit.ro","areaServed":"RO","availableLanguage":["ro","en"],"address":{"@type":"PostalAddress","streetAddress":"Splaiul Unirii nr. 16, et. 1, ap. 108","postalCode":"030139","addressLocality":"București","addressCountry":"RO"},"geo":{"@type":"GeoCoordinates","latitude":44.4232208,"longitude":26.1090618},"hasMap":"https://maps.app.goo.gl/R3jmTdMv92TMPsMo9","parentOrganization":{"@type":"Organization","name":"Buchhaltung & Bilanz Audit","url":"https://www.bilanzaudit.ro/","taxID":"35926102"},"knowsAbout":["litigii de muncă","contestație decizie de concediere","Codul muncii","sancțiuni disciplinare","ore suplimentare","salarizare"]},
 {"@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Cât timp am pentru a contesta concedierea?","acceptedAnswer":{"@type":"Answer","text":"45 de zile calendaristice de la comunicarea deciziei (art. 268 alin. 1 lit. a Codul muncii)."}},
 {"@type":"Question","name":"Cine trebuie să dovedească în litigiul de muncă?","acceptedAnswer":{"@type":"Answer","text":"Angajatorul (art. 272 Codul muncii)."}},
@@ -286,21 +325,33 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
   var D={ro:['duminică','luni','marți','miercuri','joi','vineri','sâmbătă'],en:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']};
   var M={ro:['ianuarie','februarie','martie','aprilie','mai','iunie','iulie','august','septembrie','octombrie','noiembrie','decembrie'],en:['January','February','March','April','May','June','July','August','September','October','November','December']};
   var t=document.getElementById('k-type'),d=document.getElementById('k-date'),out=document.getElementById('k-out'),left=document.getElementById('k-left');
+  var touched=false;
+  function pad(n){return (n<10?'0':'')+n}
+  // Until the visitor picks a date, the example date is the one whose deadline ends today.
+  function preset(){
+    var x=new Date();x.setHours(0,0,0,0);
+    if(t.value==='45d')x.setDate(x.getDate()-45);else if(t.value==='30d')x.setDate(x.getDate()-30);else x.setFullYear(x.getFullYear()-3);
+    d.value=x.getFullYear()+'-'+pad(x.getMonth()+1)+'-'+pad(x.getDate());
+  }
   function calc(){
     var l=lang(),v=d.value;
-    if(!v){out.textContent='—';left.textContent=l==='en'?'Pick a date.':'Alege o dată.';return}
+    if(!v){out.textContent='—';left.classList.remove('late');left.textContent=l==='en'?'Pick a date.':'Alege o dată.';return}
     var p=v.split('-').map(Number),x=new Date(p[0],p[1]-1,p[2]);
     if(t.value==='45d')x.setDate(x.getDate()+45);else if(t.value==='30d')x.setDate(x.getDate()+30);else x.setFullYear(x.getFullYear()+3);
-    while(x.getDay()===0||x.getDay()===6)x.setDate(x.getDate()+1);
+    var rolled=false;
+    while(x.getDay()===0||x.getDay()===6){x.setDate(x.getDate()+1);rolled=true}
     out.textContent=x.getDate()+' '+M[l][x.getMonth()]+' '+x.getFullYear();
     var now=new Date();now.setHours(0,0,0,0);
     var n=Math.round((x-now)/864e5);
     left.classList.toggle('late',n<0);
-    left.textContent=n<0?(l==='en'?'The deadline passed '+(-n)+' days ago.':'Termenul a expirat acum '+(-n)+' zile.')
+    left.textContent=n<0?(l==='en'?'The deadline passed '+(-n)+(n===-1?' day ago.':' days ago.'):(n===-1?'Termenul a expirat ieri.':'Termenul a expirat acum '+(-n)+' zile.'))
       :n===0?(l==='en'?'Today is the last day.':'Azi este ultima zi.')
+      :rolled&&n<=2?(l==='en'?'Monday is your last day.':'Luni este ultima ta zi.')
+      :n===1?(l==='en'?'Tomorrow is the last day.':'Mâine este ultima zi.')
       :D[l][x.getDay()]+' · '+(l==='en'?n+' days left':'mai ai '+n+' zile');
   }
-  t.addEventListener('change',calc);d.addEventListener('input',calc);
+  t.addEventListener('change',function(){if(!touched)preset();calc()});
+  d.addEventListener('input',function(){touched=true;calc()});
   function setAud(a){
     document.body.dataset.a=a;
     document.querySelectorAll('.switch button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.a===a))});
@@ -316,6 +367,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
   }
   document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
   var saved='ro';try{saved=localStorage.getItem('lang')||'ro'}catch(e){}
-  setAud('emp');setLang(saved);
+  preset();setAud('emp');setLang(saved);
 })();
 </script>

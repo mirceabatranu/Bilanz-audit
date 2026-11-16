@@ -128,7 +128,35 @@ footer{border-top:1px solid var(--line);padding-block:24px 40px;font-size:.84rem
   .brand small{display:none}
   .lang{margin-left:auto;align-self:center}
 }
-@media (prefers-reduced-motion:reduce){.bar span{transition:none}}
+
+/* ---------- depth: shadows ---------- */
+:root{
+  --sh-sm:0 1px 2px rgba(22,35,29,.06),0 2px 6px rgba(22,35,29,.07);
+  --sh-md:0 2px 4px rgba(22,35,29,.05),0 12px 26px -8px rgba(22,35,29,.18);
+  --sh-lg:0 4px 8px rgba(22,35,29,.05),0 26px 52px -16px rgba(22,35,29,.3);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --sh-sm:0 1px 2px rgba(0,0,0,.4),0 2px 6px rgba(0,0,0,.3);
+  --sh-md:0 2px 4px rgba(0,0,0,.35),0 12px 26px -8px rgba(0,0,0,.55);
+  --sh-lg:0 4px 10px rgba(0,0,0,.4),0 28px 56px -14px rgba(0,0,0,.7)}}
+:root[data-theme="dark"]{
+  --sh-sm:0 1px 2px rgba(0,0,0,.4),0 2px 6px rgba(0,0,0,.3);
+  --sh-md:0 2px 4px rgba(0,0,0,.35),0 12px 26px -8px rgba(0,0,0,.55);
+  --sh-lg:0 4px 10px rgba(0,0,0,.4),0 28px 56px -14px rgba(0,0,0,.7)}
+.rail{box-shadow:6px 0 28px -12px rgba(0,0,0,.45);z-index:5}
+.checker{box-shadow:var(--sh-lg)}
+.pill-link,button.submit{box-shadow:var(--sh-md);transition:transform .2s,box-shadow .2s}
+.pill-link:hover,button.submit:hover{transform:translateY(-2px);box-shadow:var(--sh-lg)}
+.tablewrap{box-shadow:var(--sh-md)}
+.svc{box-shadow:var(--sh-md);transition:transform .2s,box-shadow .2s}
+.svc:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.band{box-shadow:var(--sh-lg)}
+form{box-shadow:var(--sh-lg)}
+.role label{box-shadow:var(--sh-sm)}
+@media (max-width:900px){.rail{box-shadow:0 8px 24px -12px rgba(0,0,0,.5)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+h3 a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:color-mix(in srgb,currentColor 35%,transparent)}
+h3 a:hover{text-decoration-color:currentColor}
 </style>
 
 <div class="shell">
@@ -148,7 +176,7 @@ footer{border-top:1px solid var(--line);padding-block:24px 40px;font-size:.84rem
     <div class="quick">
       <span lang="ro">Consultanță la</span><span lang="en">Call us on</span>
       <b>0744.328.886</b>
-      <span>bilanzaudit@gmail.com</span>
+      <span>office@bilanzaudit.ro</span>
     </div>
   </aside>
 
@@ -202,9 +230,9 @@ footer{border-top:1px solid var(--line);padding-block:24px 40px;font-size:.84rem
         <h2><span lang="ro">Contabilitate și drept, în același dosar</span><span lang="en">Accounting and law in the same file</span></h2>
       </div>
       <div class="grid">
-        <article class="svc"><span class="who"><span lang="ro">Administratori</span><span lang="en">Directors</span></span><h3><span lang="ro">Apărare în acțiunea art. 169</span><span lang="en">Defence against art. 169 claims</span></h3><p lang="ro">Răspuns la cererea lichidatorului, probe, întâmpinare și susținere în fața judecătorului-sindic.</p><p lang="en">Response to the liquidator's claim, evidence, defence brief and support before the insolvency judge.</p></article>
+        <article class="svc"><span class="who"><span lang="ro">Administratori</span><span lang="en">Directors</span></span><h3><a lang="ro" href="/art-169-legea-85-2014/">Apărare în acțiunea art. 169</a><a lang="en" href="/en/article-169-insolvency-liability/">Defence against art. 169 claims</a></h3><p lang="ro">Răspuns la cererea lichidatorului, probe, întâmpinare și susținere în fața judecătorului-sindic.</p><p lang="en">Response to the liquidator's claim, evidence, defence brief and support before the insolvency judge.</p></article>
         <article class="svc"><span class="who"><span lang="ro">Expertiză</span><span lang="en">Forensic</span></span><h3><span lang="ro">Cauzele reale ale insolvenței</span><span lang="en">The real causes of insolvency</span></h3><p lang="ro">Arătăm, pe cifre, că insolvența a venit din piață, clienți neplătitori sau costuri externe, nu din fapta administratorului.</p><p lang="en">We show with figures that insolvency came from the market, unpaid invoices or external costs, not the director's conduct.</p></article>
-        <article class="svc"><span class="who">ANAF</span><h3><span lang="ro">Contestarea răspunderii solidare</span><span lang="en">Appealing joint tax liability</span></h3><p lang="ro">Verificăm dacă sunt îndeplinite condițiile legale și dacă sumele atribuite vă aparțin.</p><p lang="en">We check whether the legal conditions are met and whether the amounts assigned to you are right.</p></article>
+        <article class="svc"><span class="who">ANAF</span><h3><a lang="ro" href="/raspundere-solidara-anaf/">Contestarea răspunderii solidare</a><a lang="en" href="/en/joint-tax-liability-anaf/">Appealing joint tax liability</a></h3><p lang="ro">Verificăm dacă sunt îndeplinite condițiile legale și dacă sumele atribuite vă aparțin.</p><p lang="en">We check whether the legal conditions are met and whether the amounts assigned to you are right.</p></article>
         <article class="svc"><span class="who"><span lang="ro">Contabilitate</span><span lang="en">Accounting</span></span><h3><span lang="ro">Reconstituirea evidențelor</span><span lang="en">Rebuilding the records</span></h3><p lang="ro">Refacem balanțe și registre din extrase și facturi, pentru a înlătura prezumția de contabilitate neținută.</p><p lang="en">We rebuild trial balances and ledgers from statements and invoices to rebut the missing-records presumption.</p></article>
         <article class="svc"><span class="who"><span lang="ro">Practicieni și creditori</span><span lang="en">Practitioners and creditors</span></span><h3><span lang="ro">Analiza fundamentării cererii</span><span lang="en">Building the claim</span></h3><p lang="ro">Rapoarte privind cauzele insolvenței și calculul prejudiciului pentru lichidatori și creditori.</p><p lang="en">Reports on causes of insolvency and loss calculations for liquidators and creditors.</p></article>
         <article class="svc"><span class="who"><span lang="ro">Prevenție</span><span lang="en">Prevention</span></span><h3><span lang="ro">Audit pentru administratori</span><span lang="en">Director risk review</span></h3><p lang="ro">Înainte de dizolvare, cesiune de părți sociale sau o cerere de insolvență, verificăm ce riscuri personale rămân.</p><p lang="en">Before winding up, selling shares or filing for insolvency, we check what personal risks remain.</p></article>
@@ -219,7 +247,7 @@ footer{border-top:1px solid var(--line);padding-block:24px 40px;font-size:.84rem
     <section id="intrebari">
       <div class="sec-title"><p class="kicker"><span lang="ro">Întrebări frecvente</span><span lang="en">Common questions</span></p><h2><span lang="ro">Ce trebuie să știe un administrator</span><span lang="en">What a director should know</span></h2></div>
       <div class="qa">
-        <div><h3><span lang="ro">Am fost administrator doar formal. Răspund?</span><span lang="en">I was only a nominal director. Am I liable?</span></h3><p lang="ro">Se poate răspunde și ca administrator de drept, chiar fără implicare reală. Contează însă ce fapte vă sunt imputate și ce dovezi există. Administratorul de fapt poate răspunde la rândul său.</p><p lang="en">Formal directors can be held liable even without real involvement, but what matters is which acts are alleged and what evidence exists. The de facto director can be liable too.</p></div>
+        <div><h3><a lang="ro" href="/administrator-formal/">Am fost administrator doar formal. Răspund?</a><a lang="en" href="/en/nominal-director/">I was only a nominal director. Am I liable?</a></h3><p lang="ro">Se poate răspunde și ca administrator de drept, chiar fără implicare reală. Contează însă ce fapte vă sunt imputate și ce dovezi există. Administratorul de fapt poate răspunde la rândul său.</p><p lang="en">Formal directors can be held liable even without real involvement, but what matters is which acts are alleged and what evidence exists. The de facto director can be liable too.</p></div>
         <div><h3><span lang="ro">Am predat firma altcuiva. Mai pot fi chemat?</span><span lang="en">I sold the company. Can they still come after me?</span></h3><p lang="ro">Da, pentru perioada în care ați condus societatea. De aceea un audit înainte de cesiune vă protejează.</p><p lang="en">Yes, for the period you ran the company. A review before the sale protects you.</p></div>
         <div><h3><span lang="ro">Lipsa documentelor înseamnă automat răspundere?</span><span lang="en">Do missing records mean automatic liability?</span></h3><p lang="ro">Nu automat, dar creează o prezumție greu de răsturnat. Reconstituirea evidenței contabile este adesea cea mai eficientă apărare.</p><p lang="en">Not automatically, but it creates a presumption that is hard to rebut. Rebuilding the books is often the most effective defence.</p></div>
         <div><h3><span lang="ro">Ce fac dacă ANAF îmi trimite decizie de răspundere solidară?</span><span lang="en">ANAF sent me a joint-liability decision. What now?</span></h3><p lang="ro">Aveți 45 de zile pentru contestație. Trimiteți-ne decizia cât mai repede pentru verificarea condițiilor și a sumelor.</p><p lang="en">You have 45 days to appeal. Send us the decision quickly so we can check the conditions and the amounts.</p></div>
@@ -234,7 +262,8 @@ footer{border-top:1px solid var(--line);padding-block:24px 40px;font-size:.84rem
           <li><span class="k"><span lang="ro">Firma</span><span lang="en">Firm</span></span><span class="v">Buchhaltung &amp; Bilanz Audit · CUI 35926102 · J40/5123/2016</span></li>
           <li><span class="k"><span lang="ro">Adresa</span><span lang="en">Address</span></span><span class="v"><a href="https://maps.app.goo.gl/R3jmTdMv92TMPsMo9" target="_blank" rel="noopener">Splaiul Unirii nr. 16, et. 1, ap. 108, 030139 București</a></span></li>
           <li><span class="k"><span lang="ro">Telefon / WhatsApp</span><span lang="en">Phone / WhatsApp</span></span><span class="v"><a href="tel:+40744328886">0744.328.886</a> · <a href="https://wa.me/40744328886" target="_blank" rel="noopener">WhatsApp</a></span></li>
-          <li><span class="k">Email</span><span class="v">bilanzaudit@gmail.com</span></li>
+          <li><span class="k"><span lang="ro">Program</span><span lang="en">Hours</span></span><span class="v"><span lang="ro">Luni–Vineri, 9:00–17:00</span><span lang="en">Monday–Friday, 9:00–17:00</span></span></li>
+          <li><span class="k">Email</span><span class="v"><a href="mailto:office@bilanzaudit.ro">office@bilanzaudit.ro</a></span></li>
           <li><span class="k">Web</span><span class="v"><a href="https://www.bilanzaudit.ro/" target="_blank" rel="noopener">bilanzaudit.ro</a></span></li>
         </ul>
       </div>
@@ -258,7 +287,7 @@ footer{border-top:1px solid var(--line);padding-block:24px 40px;font-size:.84rem
     </section>
 
     <footer>
-      <span>© 2026 Buchhaltung &amp; Bilanz Audit · <a href="https://infractiunifiscale.ro" target="_blank" rel="noopener">infractiunifiscale.ro</a> · <a href="https://litigiimunca.ro" target="_blank" rel="noopener">litigiimunca.ro</a></span>
+      <span>© 2026 Buchhaltung &amp; Bilanz Audit · <a href="https://www.bilanzaudit.ro/" target="_blank" rel="noopener">bilanzaudit.ro</a></span>
       <span lang="ro">Informații generale, nu consultanță juridică. · <a href="/confidentialitate/">Confidențialitate</a></span><span lang="en">General information, not legal advice. · <a href="/en/privacy/">Privacy</a></span>
     </footer>
   </main>
@@ -266,7 +295,7 @@ footer{border-top:1px solid var(--line);padding-block:24px 40px;font-size:.84rem
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":["ProfessionalService","LegalService"],"name":"Atragerea Răspunderii — Legal BBA","url":"https://atragerearaspunderii.ro/","description":"Apărarea administratorilor și asociaților în acțiuni de atragere a răspunderii (art. 169 Legea 85/2014), răspundere solidară ANAF și expertiza cauzelor insolvenței.","telephone":"+40744328886","email":"bilanzaudit@gmail.com","areaServed":"RO","availableLanguage":["ro","en"],"address":{"@type":"PostalAddress","streetAddress":"Splaiul Unirii nr. 16, et. 1, ap. 108","postalCode":"030139","addressLocality":"București","addressCountry":"RO"},"geo":{"@type":"GeoCoordinates","latitude":44.4232208,"longitude":26.1090618},"hasMap":"https://maps.app.goo.gl/R3jmTdMv92TMPsMo9","parentOrganization":{"@type":"Organization","name":"Buchhaltung & Bilanz Audit","url":"https://www.bilanzaudit.ro/","taxID":"35926102"},"knowsAbout":["atragerea răspunderii administratorului","art. 169 Legea 85/2014","răspundere solidară ANAF","insolvență","expertiză contabilă"]},
+{"@type":["ProfessionalService","LegalService"],"name":"Atragerea Răspunderii — Legal BBA","url":"https://atragerearaspunderii.ro/","description":"Apărarea administratorilor și asociaților în acțiuni de atragere a răspunderii (art. 169 Legea 85/2014), răspundere solidară ANAF și expertiza cauzelor insolvenței.","telephone":"+40744328886","email":"office@bilanzaudit.ro","areaServed":"RO","availableLanguage":["ro","en"],"address":{"@type":"PostalAddress","streetAddress":"Splaiul Unirii nr. 16, et. 1, ap. 108","postalCode":"030139","addressLocality":"București","addressCountry":"RO"},"geo":{"@type":"GeoCoordinates","latitude":44.4232208,"longitude":26.1090618},"hasMap":"https://maps.app.goo.gl/R3jmTdMv92TMPsMo9","parentOrganization":{"@type":"Organization","name":"Buchhaltung & Bilanz Audit","url":"https://www.bilanzaudit.ro/","taxID":"35926102"},"knowsAbout":["atragerea răspunderii administratorului","art. 169 Legea 85/2014","răspundere solidară ANAF","insolvență","expertiză contabilă"]},
 {"@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Am fost administrator doar formal. Răspund?","acceptedAnswer":{"@type":"Answer","text":"Se poate răspunde și ca administrator de drept; contează faptele imputate și probele. Administratorul de fapt poate răspunde și el."}},
 {"@type":"Question","name":"Ce fac dacă ANAF îmi trimite decizie de răspundere solidară?","acceptedAnswer":{"@type":"Answer","text":"Aveți 45 de zile pentru contestație administrativă."}}]}]}

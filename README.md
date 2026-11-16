@@ -11,8 +11,13 @@ Three bilingual (RO/EN) sites for Buchhaltung & Bilanz Audit, hosted on one Fire
 ## How it fits together
 
 - `src/pages/<domain>.html` holds the page content in both languages (elements tagged `lang="ro"` / `lang="en"`). **Edit content here.**
+- `src/topics.mjs` holds the short topic pages (one entry per page, RO and EN). Add an entry there to get a new page; it is linked from the other topic pages and added to `sitemap.xml` and `llms.txt` automatically.
+- litigiimunca.ro has one page per audience: `/` for employees and `/angajatori/` (`/en/employers/`) for employers.
+- Meta tags, structured data and `llms.txt` are written without diacritics by the build; visible text keeps them.
+- `build.mjs` has three settings at the top: `COMPANY` (contact details, opening hours, social profiles), `CF_ANALYTICS` (Cloudflare Web Analytics tokens, empty = no analytics) and `TEAM` (empty = no team page).
+- `src/static/<domain>/og.png` is the 1200x630 sharing image; redraw it with `node scripts/og-image.mjs` (needs Playwright).
 - `npm run build` writes `dist/<domain>/` with `/` (RO), `/en/` (EN), `/confidentialitate/`, `/en/privacy/`, `404.html`, `sitemap.xml`, `robots.txt`, `llms.txt` and `favicon.svg`.
-- Every site's form posts to `/api/contact`, which Firebase Hosting forwards to the `contact` Cloud Function (`functions/index.js`, region `europe-west1`). The function saves the message to the Firestore collection `mesajeContact` and emails it through Resend to `bilanzaudit@gmail.com`.
+- Every site's form posts to `/api/contact`, which Firebase Hosting forwards to the `contact` Cloud Function (`functions/index.js`, region `europe-west1`). The function saves the message to the Firestore collection `mesajeContact` and emails it through Resend to the address in `MAIL_TO` (`functions/.env`).
 - Firestore rules block all browser access. Only the function writes.
 
 ## One-time setup
@@ -33,7 +38,7 @@ Three bilingual (RO/EN) sites for Buchhaltung & Bilanz Audit, hosted on one Fire
    ```
    firebase functions:secrets:set RESEND_API_KEY
    ```
-   The sender defaults to `formular@infractiunifiscale.ro` and the recipient to `bilanzaudit@gmail.com`. To change them, create `functions/.env` with `MAIL_FROM=...` and `MAIL_TO=...` (comma-separate several recipients).
+   The sender defaults to `formular@infractiunifiscale.ro` and the recipient to `office@bilanzaudit.ro`. To change them, create `functions/.env` with `MAIL_FROM=...` and `MAIL_TO=...` (comma-separate several recipients).
 5. **Deploy everything.**
    ```
    npm run deploy
