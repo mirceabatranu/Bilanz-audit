@@ -110,6 +110,38 @@ ${css}</style>
 </head>`;
 }
 
+// Rewrites the page's JSON-LD for the language being built: URL, description and language follow the page,
+// and the FAQPage entries are rebuilt from the questions visible in the #intrebari section, so they always match it.
+function structuredData(body, domain, lang) {
+  const meta = SITES[domain][lang];
+  const url = `https://${domain}${lang === 'en' ? '/en/' : '/'}`;
+  const serviceId = `https://${domain}/#service`;
+  const text = (s) => s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+  const faq = [];
+  const start = body.indexOf('id="intrebari"');
+  if (start >= 0) {
+    const section = body.slice(start, body.indexOf('</section>', start));
+    const re = /<summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>|<div><h3>([\s\S]*?)<\/h3>([\s\S]*?)<\/div>/g;
+    let m;
+    while ((m = re.exec(section))) faq.push({ q: text(m[1] ?? m[3]), a: text(m[2] ?? m[4]) });
+  }
+  return body.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/, (_, json) => {
+    const data = JSON.parse(json);
+    for (const node of data['@graph']) {
+      node.inLanguage = lang;
+      if (node['@type'] === 'FAQPage') {
+        if (faq.length) node.mainEntity = faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } }));
+      } else {
+        node['@id'] = serviceId;
+        node.url = url;
+        node.description = meta.desc;
+      }
+    }
+    data['@graph'].push({ '@type': 'WebPage', '@id': url, url, name: meta.title, description: meta.desc, inLanguage: lang, about: { '@id': serviceId } });
+    return `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
+  });
+}
+
 function buildHome(domain, lang) {
   const src = readFileSync(join(ROOT, 'src/pages', `${domain}.html`), 'utf8');
   const fonts = (src.match(/<link rel="stylesheet" href="(https:\/\/fonts\.googleapis\.com[^"]+)">/) || [])[1];
@@ -128,6 +160,8 @@ function buildHome(domain, lang) {
   // Honeypot field for spam bots
   body = body.replace('<form id="f" novalidate>', '<form id="f" novalidate>\n        <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>');
 
+  body = structuredData(body, domain, lang);
+
   const path = lang === 'en' ? '/en/' : '/';
   const bodyAttr = lang === 'en' ? ' class="en"' : '';
   return `${head({ domain, lang, path, meta: SITES[domain][lang], fonts, css, altRo: '/', altEn: '/en/' })}
@@ -141,10 +175,11 @@ ${body.trim()}
 
 function simplePage(domain, lang, path, alt, meta, inner, noindex = false) {
   const s = SITES[domain];
-  const css = `:root{--bg:#F7F8FA;--fg:#14202E;--muted:#556171;--line:#D9DEE5;--accent:${s.accent}}
-@media (prefers-color-scheme:dark){:root{--bg:#0E141B;--fg:#E6EBF1;--muted:#9BA7B6;--line:#243142;--accent:${s.accent === s.theme ? '#5FB3BD' : s.accent};color-scheme:dark}}
+  const css = `:root{--bg:#F1F3F6;--surface:#FFFFFF;--fg:#14202E;--muted:#556171;--line:#D9DEE5;--accent:${s.accent};--sh:0 2px 4px rgba(20,32,46,.05),0 18px 40px -16px rgba(20,32,46,.25)}
+@media (prefers-color-scheme:dark){:root{--bg:#0E141B;--surface:#151E29;--fg:#E6EBF1;--muted:#9BA7B6;--line:#243142;--accent:${s.accent === s.theme ? '#5FB3BD' : s.accent};--sh:0 4px 10px rgba(0,0,0,.4),0 24px 48px -14px rgba(0,0,0,.7);color-scheme:dark}}
 body{background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 .w{max-width:760px;margin:0 auto;padding:40px 20px 64px}
+.sheet{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,5vw,40px);box-shadow:var(--sh)}
 a{color:var(--accent)}
 .top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:40px;font-weight:600}
 .top a{text-decoration:none;color:var(--fg)}
@@ -152,13 +187,15 @@ h1{font-size:clamp(1.8rem,4vw,2.4rem);line-height:1.15;margin:0 0 8px;text-wrap:
 h2{font-size:1.2rem;margin:32px 0 8px}
 p,li{color:var(--muted)} strong{color:var(--fg)}
 .meta{font-size:.9rem;color:var(--muted)}
-footer{border-top:1px solid var(--line);margin-top:48px;padding-top:20px;font-size:.88rem;color:var(--muted)}`;
+footer{margin-top:28px;font-size:.88rem;color:var(--muted)}`;
   return `${head({ domain, lang, path, meta, fonts: null, css, altRo: alt.ro, altEn: alt.en, noindex })}
 <body>
 <div class="w">
   <div class="top"><a href="${lang === 'en' ? '/en/' : '/'}">${domain}</a><a href="${lang === 'en' ? alt.ro : alt.en}" hreflang="${lang === 'en' ? 'ro' : 'en'}">${lang === 'en' ? 'RO' : 'EN'}</a></div>
+  <div class="sheet">
 ${inner}
-  <footer>© ${new Date().getFullYear()} ${COMPANY.name} · CUI ${COMPANY.cui} · ${COMPANY.reg}</footer>
+  </div>
+  <footer>© ${new Date().getFullYear()} ${esc(COMPANY.name)} · <a href="https://www.bilanzaudit.ro/" rel="noopener">bilanzaudit.ro</a></footer>
 </div>
 </body>
 </html>
