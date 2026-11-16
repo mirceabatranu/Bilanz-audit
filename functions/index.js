@@ -10,7 +10,7 @@ initializeApp();
 
 const RESEND_API_KEY = defineSecret('RESEND_API_KEY');
 const MAIL_FROM = defineString('MAIL_FROM', { default: 'Formular site <formular@infractiunifiscale.ro>' });
-const MAIL_TO = defineString('MAIL_TO', { default: 'bilanzaudit@gmail.com' });
+const MAIL_TO = defineString('MAIL_TO', { default: 'office@bilanzaudit.ro' });
 
 const SITES = {
   'infractiunifiscale.ro': 'Infracțiuni fiscale',

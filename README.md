@@ -38,7 +38,7 @@ Three bilingual (RO/EN) sites for Buchhaltung & Bilanz Audit, hosted on one Fire
    ```
    firebase functions:secrets:set RESEND_API_KEY
    ```
-   The sender defaults to `formular@infractiunifiscale.ro` and the recipient to `bilanzaudit@gmail.com`. To change them, create `functions/.env` with `MAIL_FROM=...` and `MAIL_TO=...` (comma-separate several recipients).
+   The sender defaults to `formular@infractiunifiscale.ro` and the recipient to `office@bilanzaudit.ro`. To change them, create `functions/.env` with `MAIL_FROM=...` and `MAIL_TO=...` (comma-separate several recipients).
 5. **Deploy everything.**
    ```
    npm run deploy
