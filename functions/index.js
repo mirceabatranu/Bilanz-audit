@@ -9,7 +9,7 @@ const { getFirestore, FieldValue } = require('firebase-admin/firestore');
 initializeApp();
 
 const RESEND_API_KEY = defineSecret('RESEND_API_KEY');
-const MAIL_FROM = defineString('MAIL_FROM', { default: 'Formular site <formular@infractiunifiscale.ro>' });
+const MAIL_FROM = defineString('MAIL_FROM', { default: 'Formular site <formular@bilanzaudit.ro>' });
 const MAIL_TO = defineString('MAIL_TO', { default: 'office@bilanzaudit.ro' });
 
 const SITES = {

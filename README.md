@@ -34,11 +34,11 @@ Three bilingual (RO/EN) sites for Buchhaltung & Bilanz Audit, hosted on one Fire
    firebase hosting:sites:create atragerearaspunderii
    firebase hosting:sites:create litigiimunca
    ```
-4. **Resend.** Create an account at https://resend.com, add `infractiunifiscale.ro` as a domain and add the DNS records it shows in Cloudflare (DNS only). Create an API key, then store it as a secret (the command asks you to paste it, so it never lands in a file):
+4. **Resend.** Create an account at https://resend.com, add `bilanzaudit.ro` as a domain and add the DNS records it shows in Cloudflare (DNS only). Create an API key, then store it as a secret (the command asks you to paste it, so it never lands in a file):
    ```
    firebase functions:secrets:set RESEND_API_KEY
    ```
-   The sender defaults to `formular@infractiunifiscale.ro` and the recipient to `office@bilanzaudit.ro`. To change them, create `functions/.env` with `MAIL_FROM=...` and `MAIL_TO=...` (comma-separate several recipients).
+   The sender defaults to `formular@bilanzaudit.ro` and the recipient to `office@bilanzaudit.ro`. To change them, create `functions/.env` with `MAIL_FROM=...` and `MAIL_TO=...` (comma-separate several recipients).
 5. **Deploy everything.**
    ```
    npm run deploy
