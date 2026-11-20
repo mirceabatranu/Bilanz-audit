@@ -20,6 +20,8 @@ const COMPANY = {
   office: 'Splaiul Unirii nr. 16, et. 1, ap. 108, 030139 București',
   phone: '0744.328.886',
   email: 'office@bilanzaudit.ro',
+  // Shown on the sites in this order (Gmail first)
+  emails: ['bilanzaudit@gmail.com', 'office@bilanzaudit.ro'],
   policy: 'https://www.bilanzaudit.ro/protectia-datelor-cu-caracter-personal/',
   facebook: 'https://www.facebook.com/bilanzaudit',
   // Monday to Friday, 9:00-17:00
@@ -234,7 +236,7 @@ function structuredData(body, domain, lang, path, meta) {
 function serviceFields(domain) {
   return {
     '@id': `https://${domain}/#service`,
-    email: COMPANY.email,
+    email: COMPANY.emails[0],
     image: `https://${domain}/og.png`,
     sameAs: [COMPANY.facebook],
     openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: COMPANY.hours.days, opens: COMPANY.hours.opens, closes: COMPANY.hours.closes }],

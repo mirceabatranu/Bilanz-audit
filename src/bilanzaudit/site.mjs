@@ -55,10 +55,17 @@ const SERVICES = [
         'Proceduri și politici contabile adaptate fiecărei firme',
         'Estimarea impozitelor și taxelor în proiectele de investiții',
       ]],
+      ['Refacerea contabilității', [
+        'Reconstruirea evidenței din extrase bancare, facturi și declarații depuse',
+        'Verificarea soldurilor, analiza creanțelor și datoriilor, reconcilierea conturilor',
+        'Identificarea diferențelor care influențează situația patrimonială a firmei',
+        'Evidență refăcută care poate fi folosită în litigii, insolvență sau la un control fiscal',
+      ]],
       ['Arhivă', [
         'Arhivarea documentelor, în format fizic și electronic',
       ]],
     ],
+    note: 'De ce contează o contabilitate refăcută într-un litigiu: <a href="/articole/refacere-contabilitate-litigii/">citiți articolul</a>.',
   },
   {
     slug: 'contabilitate-in-cloud', short: 'Contabilitate în cloud',
@@ -207,6 +214,13 @@ const SERVICES = [
         'Constatări formulate clar, pe cifre',
         'Concluzii care pot fi folosite ca probă',
       ]],
+      ['Expert parte', [
+        'Analiză contabilă independentă, alături de expertul numit de procuror sau de instanță',
+        'Obiective propuse înainte de dispunerea expertizei',
+        'Obiecțiuni argumentate și opinie separată la expertiza judiciară',
+        'Identificarea omisiunilor, a erorilor de calcul și a interpretărilor contabile discutabile',
+        'Colaborare directă cu avocatul care asigură apărarea juridică',
+      ]],
     ],
     note: 'Fiecare tip de dosar are un site dedicat: <a href="https://infractiunifiscale.ro/">infracțiuni fiscale</a>, <a href="https://atragerearaspunderii.ro/">atragerea răspunderii</a> și <a href="https://litigiimunca.ro/">litigii de muncă</a>.',
   },
@@ -215,28 +229,105 @@ const SERVICES = [
 const LEGAL = {
   slug: 'legal-bba', short: 'Legal BBA',
   title: 'Legal BBA: contabilitate și drept, în același dosar',
-  seo: 'Legal BBA: consultanță juridică, dreptul muncii și litigii',
-  desc: 'Consultanță juridică în dreptul muncii, reprezentare în litigii civile, comerciale și de insolvență, împreună cu expertiza contabilă a echipei Bilanz Audit.',
-  lead: 'Multe probleme juridice ale unei firme pornesc de la cifre. Legal BBA reunește contabilitatea, fiscalitatea și consultanța juridică, ca un dosar complex să fie coordonat de o singură echipă.',
+  seo: 'Legal BBA: consultanță juridică, infracțiuni fiscale, atragerea răspunderii, litigii de muncă',
+  desc: 'Consultanță juridică și reprezentare prin case de avocatură partenere, insolvență cu practician partener, executări silite prin BEJ, împreună cu expertiza contabilă Bilanz Audit.',
+  lead: 'Multe probleme juridice ale unei firme pornesc de la cifre. Legal BBA reunește expertiza contabilă și fiscală a echipei Bilanz Audit cu serviciile juridice ale partenerilor noștri, ca un dosar complex să fie coordonat dintr-un singur loc.',
+  intro: 'Tot ce presupune consultanță juridică și reprezentare în instanță este asigurat de case de avocatură cu care Buchhaltung & Bilanz Audit are parteneriate semnate în acest sens. Procedurile de insolvență se desfășoară împreună cu practicianul în insolvență <a href="https://tgvch.ro/servicii/insolventa/" target="_blank" rel="noopener">Cosmin A. Hârceagă (TGV-CH Restructuring &amp; Insolvency SPRL)</a>, iar executările silite prin <strong>BEJ Petre Cristian</strong>. Noi aducem cifrele: expertiză contabilă judiciară și extrajudiciară, expert parte, refacerea și verificarea evidențelor.',
   sections: [
-    ['Consultanță juridică în dreptul muncii', [
-      'Consultanță privind prevederile Codului muncii',
-      'Redactarea documentației de dreptul muncii și resurse umane',
-      'Consultanță în litigiile de muncă',
-      'Consiliere la concedieri individuale și colective',
-      'Negociere și mediere',
-      'Consultanță în domeniul pensiilor',
+    ['Infracțiuni fiscale', [
+      'Asistență la inspecția fiscală și contestarea deciziei de impunere',
+      'Reprezentare în dosarele de evaziune fiscală, prin avocați specializați în drept penal fiscal',
+      'Expert contabil parte și recalcularea prejudiciului',
+      'Strategia de acoperire a prejudiciului (art. 10 Legea 241/2005)',
     ]],
-    ['Litigii și reprezentare', [
-      'Reprezentarea intereselor clienților în procedurile judiciare',
-      'Consiliere pentru soluționarea pe cale amiabilă a litigiilor',
-      'Litigii civile și comerciale, recuperare de creanțe, contencios administrativ',
-      'Raporturi de muncă, imobiliare, proprietate intelectuală, asigurări, fiscalitate',
-      'Proceduri de arbitraj',
-      'Litigii privind insolvența, lichidarea și falimentul',
+    ['Atragerea răspunderii și insolvență', [
+      'Apărarea administratorilor în acțiunile întemeiate pe art. 169 Legea 85/2014',
+      'Contestarea deciziilor ANAF de atragere a răspunderii solidare (art. 25 Cod procedură fiscală)',
+      'Acțiuni în răspundere împotriva administratorilor și recuperarea prejudiciilor',
+      'Reorganizare judiciară, faliment și restructurare, împreună cu practicianul în insolvență partener',
+      'Expertiza cauzelor insolvenței și refacerea contabilității',
+    ]],
+    ['Dreptul muncii și litigii de muncă', [
+      'Consultanță privind Codul muncii, prin casa de avocatură parteneră specializată în litigii de muncă',
+      'Înregistrarea și încetarea contractelor individuale de muncă, reintegrare',
+      'Concedieri individuale și colective, cercetare disciplinară',
+      'Reprezentare în litigiile de muncă și expertiză contabilă de salarizare',
+    ]],
+    ['Litigii civile, comerciale și executare silită', [
+      'Litigii civile și comerciale, recuperare de creanțe, contencios administrativ și fiscal',
+      'Consiliere pentru soluționarea pe cale amiabilă, negociere și mediere',
+      'Executarea silită a titlurilor executorii, prin BEJ Petre Cristian',
+      'Expertize contabile în litigii: creanțe, prejudicii, decontări între asociați',
     ]],
   ],
 };
+
+// Partners shown on the Legal BBA page.
+const PARTNERS = [
+  { who: 'Consultanță juridică și reprezentare', name: 'Case de avocatură partenere', text: 'Consultanța juridică, redactarea actelor și reprezentarea în fața instanțelor și a organelor de urmărire penală sunt asigurate de avocați, pe baza parteneriatelor semnate cu Buchhaltung & Bilanz Audit.' },
+  { who: 'Insolvență', name: 'Cosmin A. Hârceagă', href: 'https://tgvch.ro/servicii/insolventa/', text: 'Practician în insolvență, managing partner al TGV-CH Restructuring & Insolvency SPRL: reorganizare judiciară, faliment, restructurare și consultanță pentru creditori.' },
+  { who: 'Executare silită', name: 'BEJ Petre Cristian', text: 'Executarea silită a hotărârilor și a celorlalte titluri executorii obținute de clienții noștri.' },
+];
+
+// Articles, newest first. body is HTML.
+const NEW_ARTICLES = [
+  {
+    slug: 'atragerea-raspunderii-administratorilor',
+    kicker: 'Atragerea răspunderii',
+    title: 'Atragerea răspunderii administratorilor: responsabilitatea nu începe odată cu insolvența',
+    desc: 'Răspunderea administratorilor poate fi angajată și în timpul funcționării societății: răspundere civilă, contractuală sau delictuală și răspundere solidară fiscală (art. 25 Cod procedură fiscală).',
+    note: 'Ați fost chemat să răspundeți pentru datoriile unei firme? Vedeți <a href="https://atragerearaspunderii.ro/">atragerearaspunderii.ro</a>.',
+    body: `<p class="lede">Răspunderea administratorilor unei societăți nu se limitează la situațiile în care societatea ajunge în insolvență.</p>
+<p>Pe parcursul funcționării societății, anumite decizii manageriale, operațiuni patrimoniale nejustificate, utilizarea necorespunzătoare a activelor, încălcarea obligațiilor legale sau contractuale ori prejudicierea societății și a creditorilor pot constitui temeiuri pentru angajarea răspunderii civile, contractuale sau delictuale, după caz.</p>
+<p>În materia obligațiilor fiscale poate interveni inclusiv răspunderea solidară a administratorilor, în condițiile restrictive prevăzute de art. 25 din Codul de procedură fiscală.</p>
+<h2>Ce presupune analiza unei astfel de situații</h2>
+<p>Analiza presupune examinarea documentelor contabile, a fluxurilor financiare, a operațiunilor cu părțile afiliate, a transferurilor de active, a relațiilor comerciale și a deciziilor adoptate de organele de conducere.</p>
+<p>Identificarea prejudiciului, stabilirea persoanelor responsabile și demonstrarea legăturii de cauzalitate sunt elemente esențiale pentru fundamentarea unei acțiuni în răspundere.</p>
+<h2>Cum vă putem sprijini</h2>
+<p>Buchhaltung &amp; Bilanz Audit oferă analiză financiar-contabilă, expertiză contabilă judiciară și extrajudiciară și asistență de specialitate în calitate de expert parte, inclusiv în litigii având ca obiect atragerea răspunderii administratorilor, recuperarea prejudiciilor și verificarea operațiunilor economice care au afectat patrimoniul societăților. Consultanța juridică și reprezentarea sunt asigurate prin casele de avocatură partenere, iar procedurile de insolvență împreună cu practicianul în insolvență Cosmin A. Hârceagă (TGV-CH Restructuring &amp; Insolvency).</p>
+<p class="callout">Prevenția, documentarea și analiza contabilă riguroasă pot face diferența între o suspiciune și o răspundere demonstrată.</p>`,
+  },
+  {
+    slug: 'expert-parte-argumente-contabile-fiscale',
+    kicker: 'Expertiză contabilă',
+    title: 'Expert parte: argumente contabile și fiscale în susținerea poziției procesuale',
+    desc: 'Rolul expertului parte în litigiile comerciale și fiscale și în cauzele de insolvență: analiză contabilă independentă, obiecțiuni argumentate și identificarea erorilor din expertiza judiciară.',
+    note: 'Aveți un dosar de evaziune fiscală? Vedeți <a href="https://infractiunifiscale.ro/expert-contabil-parte/">expertul contabil parte pe infractiunifiscale.ro</a>.',
+    body: `<p class="lede">În litigiile comerciale, fiscale și în cauzele generate de procedurile de insolvență, documentele contabile nu reprezintă doar o evidență a operațiunilor economice.</p>
+<p>Ele pot constitui probe importante pentru stabilirea situației de fapt. Fie că discutăm despre atragerea răspunderii patrimoniale, prejudicii economice, operațiuni nejustificate, creanțe contestate sau diferențe rezultate din evidențele contabile, interpretarea corectă a informațiilor financiare poate influența înțelegerea aspectelor tehnice ale cauzei.</p>
+<h2>Ce aduce expertul parte</h2>
+<p>Participarea unui expert parte permite părții interesate să beneficieze de o analiză contabilă independentă, să formuleze obiecțiuni argumentate la concluziile unei expertize judiciare și să identifice eventualele omisiuni, erori de calcul sau interpretări contabile discutabile.</p>
+<p>Rolul expertului este de a furniza argumente tehnice fundamentate, fără a substitui atribuțiile instanței în stabilirea răspunderii juridice și fără a înlocui apărarea juridică, asigurată de avocat.</p>
+<h2>Experiența noastră</h2>
+<p>Buchhaltung &amp; Bilanz Audit pune la dispoziție experiență în domeniul contabil, fiscal și al expertizelor judiciare, pentru cauze în care analiza financiar-contabilă necesită rigoare, documentare și o abordare interdisciplinară, împreună cu avocații partenerilor noștri.</p>`,
+  },
+  {
+    slug: 'refacere-contabilitate-litigii',
+    kicker: 'Contabilitate',
+    title: 'Refacerea contabilității: documentele contabile pot deveni elemente esențiale într-un litigiu',
+    desc: 'O contabilitate incompletă sau neactualizată poate deveni relevantă în insolvență și în acțiunile de atragere a răspunderii. Ce presupune refacerea și verificarea evidenței contabile.',
+    note: 'Refacerea evidenței este adesea cea mai eficientă apărare a administratorului. Vedeți <a href="https://atragerearaspunderii.ro/refacere-contabilitate/">atragerearaspunderii.ro</a>.',
+    body: `<p class="lede">O contabilitate incompletă, neactualizată sau ținută necorespunzător poate genera consecințe care depășesc sfera fiscală.</p>
+<p>În contextul unei proceduri de insolvență, lipsa documentelor justificative, neconcordanțele dintre evidența contabilă și situația patrimonială reală sau imposibilitatea identificării operațiunilor economice pot deveni aspecte relevante inclusiv în cadrul acțiunilor de atragere a răspunderii patrimoniale.</p>
+<h2>Mai mult decât înregistrarea documentelor restante</h2>
+<p>Serviciile de refacere a contabilității presupun reconstruirea evidenței economico-financiare: verificarea soldurilor, analiza creanțelor și datoriilor, reconcilierea conturilor și identificarea eventualelor diferențe care pot influența situația patrimonială a societății.</p>
+<h2>Ce realizăm</h2>
+<p>Buchhaltung &amp; Bilanz Audit realizează lucrări de refacere și verificare a evidențelor contabile, precum și analize de specialitate necesare în litigii și proceduri de insolvență. În funcție de obiectivele cauzei, putem asigura și asistență de specialitate în calitate de expert parte.</p>`,
+  },
+  {
+    slug: 'raspundere-patrimoniala-insolventa-analiza-contabila',
+    kicker: 'Insolvență',
+    title: 'Atragerea răspunderii patrimoniale în insolvență: analiza contabilă poate face diferența',
+    desc: 'În acțiunile de atragere a răspunderii patrimoniale din insolvență, analiza documentelor contabile și legătura dintre operațiuni și prejudiciu pot fi decisive.',
+    note: 'Ați primit cererea lichidatorului? Vedeți <a href="https://atragerearaspunderii.ro/">atragerearaspunderii.ro</a>.',
+    body: `<p class="lede">Procedurile de insolvență pot ridica probleme complexe privind modul de administrare a societății, utilizarea activelor, evidența operațiunilor economico-financiare și cauzele care au condus la starea de insolvență.</p>
+<p>În acțiunile privind atragerea răspunderii patrimoniale, analiza documentelor contabile, identificarea eventualelor nereguli și stabilirea legăturii dintre operațiunile economice și prejudiciul invocat pot avea un rol esențial.</p>
+<h2>Ce oferim</h2>
+<p>Buchhaltung &amp; Bilanz Audit oferă servicii de expertiză contabilă judiciară și extrajudiciară, inclusiv în calitate de expert parte, pentru analiza situațiilor financiar-contabile, verificarea operațiunilor patrimoniale și formularea unor concluzii tehnice fundamentate pe documente și pe reglementările aplicabile.</p>
+<p>Pentru procedura de insolvență lucrăm cu practicianul în insolvență <a href="https://tgvch.ro/servicii/insolventa/" target="_blank" rel="noopener">Cosmin A. Hârceagă (TGV-CH Restructuring &amp; Insolvency SPRL)</a>, iar consultanța juridică și reprezentarea sunt asigurate prin casele de avocatură partenere.</p>
+<p class="callout">Dacă sunteți implicat într-un litigiu privind atragerea răspunderii administratorilor sau într-o procedură de insolvență, analiza contabilă de specialitate poate contribui la susținerea argumentelor dumneavoastră.</p>`,
+  },
+].map((a) => ({ ...a, date: '2026-11-19', dateRo: '19 noiembrie 2026', author: 'Iuliana Pană', role: 'Expert contabil, membru CECCAR' }));
 
 const ARTICLE = {
   slug: 'factura-de-stornare-evaziune-fiscala',
@@ -273,7 +364,10 @@ const ARTICLE = {
 <h2>Concluzie</h2>
 <p>În contabilitate, fiscalitatea nu mai este o opțiune, ci o componentă obligatorie a fiecărei decizii și a fiecărei înregistrări. Fie că vorbim de o simplă stornare sau de o politică fiscală complexă, „Nihil sine fiscalitate” a devenit realitate de zi cu zi.</p>
 <p>Atenția la detalii, înțelegerea implicațiilor legale și comunicarea cu clientul nu mai sunt simple recomandări. Sunt obligații profesionale pentru orice contabil responsabil.</p>`,
+  kicker: 'Fiscalitate',
+  note: 'Aveți un dosar de evaziune fiscală sau o inspecție ANAF în desfășurare? Vedeți <a href="https://infractiunifiscale.ro/">infractiunifiscale.ro</a>.',
 };
+const ARTICLES = [...NEW_ARTICLES, ARTICLE];
 
 // ---------- layout ----------
 const CSS = `:root{--bg:#E8E6E0;--surface:#FBFAF7;--ink:#131A26;--muted:#4C5563;--line:#D0CCC2;--navy:#16223A;--navy-ink:#EEF1F6;--navy-hi:#F2B27E;--accent:#9F4714;--on-accent:#FFFFFF;--accent-soft:#EDD9CA;
@@ -515,7 +609,7 @@ function footer(lang, c) {
         <ul>
           <li><a href="${MAPS}" target="_blank" rel="noopener">${c.office}</a></li>
           <li><a href="tel:+40744328886">${c.phone}</a> · <a href="https://wa.me/40744328886" target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><a href="mailto:${c.email}">${c.email}</a></li>
+          <li>${c.emails.map((e) => `<a href="mailto:${e}">${e}</a>`).join(' · ')}</li>
         </ul>
       </div>
       <div>
@@ -561,7 +655,7 @@ function org(c) {
     '@type': 'AccountingService', '@id': ORIGIN + '/#firma',
     name: 'Buchhaltung & Bilanz Audit', alternateName: 'Bilanz Audit', url: ORIGIN + '/',
     description: 'Firmă de contabilitate și consultanță fiscală din București: contabilitate financiară și în cloud, salarizare, consultanță fiscală, expertiză contabilă.',
-    telephone: '+40744328886', email: c.email, taxID: c.cui, areaServed: 'RO', availableLanguage: ['ro', 'en'],
+    telephone: '+40744328886', email: c.emails[0], taxID: c.cui, areaServed: 'RO', availableLanguage: ['ro', 'en'],
     address: { '@type': 'PostalAddress', streetAddress: 'Splaiul Unirii nr. 16, et. 1, ap. 108', postalCode: '030139', addressLocality: 'București', addressCountry: 'RO' },
     geo: { '@type': 'GeoCoordinates', latitude: 44.4232208, longitude: 26.1090618 }, hasMap: MAPS,
     subOrganization: NICHE.map((n) => ({ '@type': 'LegalService', url: `https://${n.domain}/` })),
@@ -574,9 +668,9 @@ function home(lang, c) {
   const T = en ? {
     title: 'Accounting firm in Bucharest | Buchhaltung & Bilanz Audit',
     desc: 'Accounting, cloud bookkeeping, payroll and tax advice for small and mid-sized companies in Romania. Buchhaltung & Bilanz Audit, Bucharest.',
-    kicker: 'Accounting firm · Bucharest',
+    kicker: 'Accounting · Forensic · Legal BBA · Bucharest',
     h1: 'Books kept up to date, with the <i>tax</i> side thought through first.',
-    lead: 'Buchhaltung & Bilanz Audit handles accounting, payroll and dealings with ANAF, the Romanian tax authority, for small and mid-sized companies, from start-ups to established businesses. We also work in the cloud: send us your documents as scans, and we take care of the rest.',
+    lead: 'Buchhaltung & Bilanz Audit handles accounting, payroll and dealings with ANAF, the Romanian tax authority, for small and mid-sized companies, from start-ups to established businesses. We also work in the cloud. When the numbers end up in court, we provide forensic accounting and, through Legal BBA and our partner lawyers, legal advice and representation.',
     cta1: 'Get in touch', cta1h: '#contact', cta2: 'Call 0744.328.886',
     dueK: 'Next tax deadline', dueList: [['D100', 'Taxes withheld and paid'], ['D112', 'Payroll contributions'], ['D300', 'VAT return'], ['D390', 'EU recapitulative statement, if needed']],
     dueNote: 'The general deadline is the 25th of the following month; if it falls on a weekend it moves to the next working day. We track it for you.',
@@ -588,7 +682,7 @@ function home(lang, c) {
     cloudBtn: 'How it works (RO)',
     whyK: 'Why us', whyH: 'Why companies work with us',
     why: [['Tax in every entry', 'We don’t stop at booking documents. We look at the tax effect of each transaction, so problems are prevented rather than fixed after an audit.'], ['Deadlines tracked for you', 'You always know what to pay, where and by when. We remind you in good time, so nothing slips.'], ['A long-term partner', 'Running a business has ups and downs. We advise you through the hard moments and help you use the opportunities.'], ['A quote that fits', 'Pricing starts from your real volume: documents per month, employees and the services you need.'], ['Recognised expertise', 'Our chartered accountants have at least 8 years of training and experience and also specialise in tax, labour law, commercial law and financial management.'], ['Lower financial risk', 'Accounting does not tolerate approximations: one mistake can mean extra costs or fines. Our accountants are insured and stand behind the accuracy of your books.']],
-    legalK: 'Legal BBA', legalH: 'When the numbers end up in court', legalP: 'Where accounting and law meet, we run three dedicated services:',
+    legalK: 'Legal BBA', legalH: 'When the numbers end up in court', legalP: 'Legal advice and representation are provided by law firms under signed partnership agreements, insolvency work together with an insolvency practitioner and enforcement through a court bailiff. We bring the forensic accounting. Three dedicated services:',
     artK: 'From our practice', artBy: `${ARTICLE.author}, ${'chartered accountant, CECCAR member'} · in Romanian`,
     artTitle: 'What does a credit note have to do with tax evasion?', artP: 'A credit note looks like a simple accounting correction. Not booking it, or issuing a fictitious one, can amount to tax evasion under Romanian law.',
     read: 'Read (RO) →',
@@ -602,9 +696,9 @@ function home(lang, c) {
   } : {
     title: 'Firmă de contabilitate București | Buchhaltung & Bilanz Audit',
     desc: 'Contabilitate financiară și în cloud, salarizare, consultanță fiscală și expertiză contabilă pentru firme mici și mijlocii. Buchhaltung & Bilanz Audit, București.',
-    kicker: 'Firmă de contabilitate · București',
+    kicker: 'Contabilitate · Expertiză · Legal BBA · București',
     h1: 'Contabilitate ținută la zi, cu <i>fiscalitatea</i> gândită dinainte.',
-    lead: 'Buchhaltung & Bilanz Audit ține contabilitatea, salarizarea și relația cu ANAF pentru firme mici și mijlocii, de la start-up-uri la afaceri consolidate. Lucrăm și în cloud: ne trimiteți documentele scanate, iar noi ne ocupăm de rest.',
+    lead: 'Buchhaltung & Bilanz Audit ține contabilitatea, salarizarea și relația cu ANAF pentru firme mici și mijlocii, de la start-up-uri la afaceri consolidate. Lucrăm și în cloud. Când cifrele ajung în instanță, oferim expertiză contabilă și, prin Legal BBA și avocații partenerilor noștri, consultanță juridică și reprezentare.',
     cta1: 'Cere o ofertă', cta1h: '/cere-oferta/', cta2: 'Sună: 0744.328.886',
     dueK: 'Următorul termen fiscal', dueList: [['D100', 'Impozite reținute și plata lor'], ['D112', 'Contribuții salariale'], ['D300', 'Decontul de TVA'], ['D390', 'Declarația recapitulativă, dacă e cazul']],
     dueNote: 'Termenul general este 25 ale lunii următoare. Dacă pică în weekend, se mută în prima zi lucrătoare. Noi îl urmărim pentru dumneavoastră.',
@@ -616,9 +710,9 @@ function home(lang, c) {
     cloudBtn: 'Cum funcționează',
     whyK: 'De ce noi', whyH: 'De ce să lucrați cu noi',
     why: [['Fiscalitatea în fiecare înregistrare', 'Nu ne oprim la înregistrarea documentelor. Ne uităm la efectul fiscal al fiecărei operațiuni, ca problemele să fie prevenite, nu corectate după un control.'], ['Termene urmărite pentru dumneavoastră', 'Știți mereu ce aveți de plătit, unde și până când. Vă anunțăm din timp, ca să nu pierdeți nimic din vedere.'], ['Un partener pe termen lung', 'Viața de antreprenor are suișuri și coborâșuri. Vă consiliem în momentele dificile și vă ajutăm să folosiți oportunitățile.'], ['O ofertă pe măsura firmei', 'Prețul pornește de la volumul real: numărul de documente pe lună, angajații și serviciile de care aveți nevoie.'], ['Expertiză recunoscută', 'Contabilii noștri autorizați au cel puțin 8 ani de pregătire și experiență și sunt specializați și în fiscalitate, drept social, drept comercial și management financiar.'], ['Riscuri financiare minime', 'Contabilitatea nu tolerează aproximările: o singură eroare poate aduce costuri suplimentare sau amenzi. Contabilii noștri sunt asigurați și garantează acuratețea evidenței dumneavoastră.']],
-    legalK: 'Legal BBA', legalH: 'Când cifrele ajung în instanță', legalP: 'Pentru situațiile în care contabilitatea și dreptul se întâlnesc, avem trei servicii dedicate:',
-    artK: 'Din practica noastră', artBy: `${ARTICLE.author}, ${ARTICLE.role.toLowerCase()} · ${ARTICLE.dateRo}`,
-    artTitle: ARTICLE.title, artP: 'Factura de stornare pare o simplă corecție contabilă. Neînregistrarea ei sau o stornare fictivă pot întruni însă elementele evaziunii fiscale.',
+    legalK: 'Legal BBA', legalH: 'Când cifrele ajung în instanță', legalP: 'Consultanța juridică și reprezentarea sunt asigurate de case de avocatură cu care avem parteneriate semnate, procedurile de insolvență împreună cu un practician în insolvență, iar executările silite prin BEJ Petre Cristian. Noi aducem expertiza contabilă. Avem trei servicii dedicate:',
+    artK: 'Din practica noastră', artBy: `${ARTICLES[0].author}, ${ARTICLES[0].role} · ${ARTICLES[0].dateRo}`,
+    artTitle: ARTICLES[0].title, artP: ARTICLES[0].desc,
     read: 'Citește articolul →',
     conK: 'Contact', conH: 'Vorbim despre firma dumneavoastră',
     firm: 'Firma', addr: 'Adresa', tel: 'Telefon / WhatsApp',
@@ -680,13 +774,13 @@ function home(lang, c) {
     <div class="grid">
       ${NICHE.map((n) => `<a class="card" href="https://${n.domain}/${en ? 'en/' : ''}"><span class="dom">${n.domain}</span><p>${en ? n.en : n.ro}</p><span class="more">${n.domain} ↗</span></a>`).join('\n      ')}
     </div>
-    ${en ? '' : '<p class="other"><a href="/legal-bba/">Consultanță juridică și reprezentare în litigii prin Legal BBA →</a></p>'}
+    <p class="other">${en ? '<a href="/legal-bba/">Legal BBA and our partners (RO) →</a>' : '<a href="/legal-bba/">Legal BBA: consultanță juridică, insolvență și executare silită, prin partenerii noștri →</a> · <a href="/articole/">Toate articolele</a>'}</p>
   </div>
 </section>
 
 <section class="block" id="articole">
   <div class="wrap">
-    <a class="article-teaser" href="/articole/${ARTICLE.slug}/">
+    <a class="article-teaser" href="/articole/${en ? ARTICLE.slug : ARTICLES[0].slug}/">
       <div><p class="kicker">${T.artK}</p><h3>${T.artTitle}</h3><p>${T.artP}</p><p class="by">${T.artBy}</p></div>
       <span class="btn">${T.read}</span>
     </a>
@@ -702,7 +796,7 @@ function home(lang, c) {
         <li><span class="k">${T.firm}</span><span class="v">${c.name} SRL · CUI ${c.cui} · ${c.reg}</span></li>
         <li><span class="k">${T.addr}</span><span class="v"><a href="${MAPS}" target="_blank" rel="noopener">${c.office}</a></span></li>
         <li><span class="k">${T.tel}</span><span class="v"><a href="tel:+40744328886">${c.phone}</a> · <a href="https://wa.me/40744328886" target="_blank" rel="noopener">WhatsApp</a></span></li>
-        <li><span class="k">Email</span><span class="v"><a href="mailto:${c.email}">${c.email}</a></span></li>
+        <li><span class="k">Email</span><span class="v">${c.emails.map((e) => `<a href="mailto:${e}">${e}</a>`).join(' · ')}</span></li>
       </ul>
       <p class="aside-note">${T.quote}</p>
     </div>
@@ -764,6 +858,9 @@ function sidebar(currentSlug) {
 
 function servicePage(s, c) {
   const steps = s.steps ? `<div class="steps-light">${s.steps.map(([h, p], i) => `<div><b>0${i + 1}</b><h3>${h}</h3><p>${p}</p></div>`).join('')}</div>` : '';
+  const intro = s.intro ? `<p class="note" style="margin:0 0 8px">${s.intro}</p>` : '';
+  const partners = s.slug === 'legal-bba' ? `<h2>Partenerii noștri</h2>
+      <div class="grid niche" style="grid-template-columns:1fr">${PARTNERS.map((p) => `<${p.href ? `a href="${p.href}" target="_blank" rel="noopener"` : 'div'} class="card"><span class="kicker">${p.who}</span><span class="dom">${p.name}</span><p>${p.text}</p></${p.href ? 'a' : 'div'}>`).join('')}</div>` : '';
   const niche = s.slug === 'legal-bba' ? `<h2>Servicii dedicate</h2>
       <div class="grid niche" style="grid-template-columns:1fr">${NICHE.map((n) => `<a class="card" href="https://${n.domain}/"><span class="dom">${n.domain}</span><p>${n.ro}</p></a>`).join('')}</div>` : '';
   const body = `<div class="wrap">
@@ -775,8 +872,10 @@ function servicePage(s, c) {
   </div>
   <div class="layout">
     <div class="content">
+      ${intro}
       ${steps}
       ${s.sections.map(([h, items]) => `<h2>${h}</h2>\n      <ul class="ticks">${items.map((i) => `<li>${i}</li>`).join('')}</ul>`).join('\n      ')}
+      ${partners}
       ${niche}
       ${s.note ? `<p class="note">${s.note}</p>` : ''}
     </div>
@@ -796,18 +895,18 @@ function servicePage(s, c) {
   }, c);
 }
 
-function articlePage(c) {
-  const a = ARTICLE, path = `/articole/${a.slug}/`;
+function articlePage(a, c) {
+  const path = `/articole/${a.slug}/`;
   const body = `<div class="wrap">
   <p class="crumbs"><a href="/">Acasă</a> / <a href="/articole/">Articole</a></p>
   <div class="page-head">
-    <p class="kicker">Fiscalitate · ${a.dateRo}</p>
+    <p class="kicker">${a.kicker} · ${a.dateRo}</p>
     <h1>${a.title}</h1>
   </div>
   <article class="prose">
     ${a.body}
-    <div class="author"><b>${a.author}</b><span>${a.role} · Buchhaltung &amp; Bilanz Audit</span><span><a href="mailto:${c.email}">${c.email}</a> · <a href="tel:+40744328886">${c.phone}</a></span></div>
-    <p class="note" style="margin-top:32px">Aveți un dosar de evaziune fiscală sau o inspecție ANAF în desfășurare? Vedeți <a href="https://infractiunifiscale.ro/">infractiunifiscale.ro</a>.</p>
+    <div class="author"><b>${a.author}</b><span>${a.role} · Buchhaltung &amp; Bilanz Audit</span><span>${c.emails.map((e) => `<a href="mailto:${e}">${e}</a>`).join(' · ')} · <a href="tel:+40744328886">${c.phone}</a></span></div>
+    <p class="note" style="margin-top:32px">${a.note}</p>
   </article>
 </div>`;
   return page({
@@ -818,26 +917,25 @@ function articlePage(c) {
 }
 
 function articlesIndex(c) {
-  const a = ARTICLE;
   const body = `<div class="wrap">
   <p class="crumbs"><a href="/">Acasă</a> / Articole</p>
   <div class="page-head">
     <p class="kicker">Articole</p>
     <h1>Din practica noastră</h1>
-    <p class="lead">Situații reale din contabilitate și fiscalitate, explicate de echipa Bilanz Audit.</p>
+    <p class="lead">Situații reale din contabilitate, fiscalitate, insolvență și litigii, explicate de echipa Bilanz Audit.</p>
   </div>
   <div style="padding-bottom:80px;display:grid;gap:18px">
-    <a class="article-teaser" href="/articole/${a.slug}/">
-      <div><p class="kicker">Fiscalitate · ${a.dateRo}</p><h3>${a.title}</h3><p>${a.desc}</p><p class="by">${a.author}, ${a.role.toLowerCase()}</p></div>
+    ${ARTICLES.map((a) => `<a class="article-teaser" href="/articole/${a.slug}/">
+      <div><p class="kicker">${a.kicker} · ${a.dateRo}</p><h3>${a.title}</h3><p>${a.desc}</p><p class="by">${a.author}, ${a.role}</p></div>
       <span class="btn">Citește →</span>
-    </a>
+    </a>`).join('')}
   </div>
 </div>`;
-  return page({ path: '/articole/', title: 'Articole despre contabilitate și fiscalitate | Bilanz Audit', desc: 'Articole despre contabilitate și fiscalitate scrise de experții contabili Buchhaltung & Bilanz Audit.', current: '/articole/', body }, c);
+  return page({ path: '/articole/', title: 'Articole despre contabilitate, fiscalitate și insolvență | Bilanz Audit', desc: 'Articole despre contabilitate, fiscalitate, insolvență și atragerea răspunderii, scrise de experții contabili Buchhaltung & Bilanz Audit.', current: '/articole/', body }, c);
 }
 
 function offerPage(c) {
-  const services = ['Contabilitate', 'Contabilitate în cloud', 'Resurse umane și salarizare', 'Consultanță fiscală', 'Consultanță financiară', 'Consultanță juridică', 'Expertiză contabilă', 'Înființare firmă / sediu'];
+  const services = ['Contabilitate', 'Contabilitate în cloud', 'Resurse umane și salarizare', 'Consultanță fiscală', 'Consultanță financiară', 'Consultanță juridică', 'Expertiză contabilă', 'Refacere contabilitate', 'Înființare firmă / sediu'];
   const chips = (name, opts, type = 'radio', checked) => `<div class="chips">${opts.map((o, i) => `<label><input type="${type}" name="${name}" data-x="${name}" value="${o}"${checked === i ? ' checked' : ''}>${o}</label>`).join('')}</div>`;
   const body = `<div class="wrap">
   <p class="crumbs"><a href="/">Acasă</a> / Cere ofertă</p>
@@ -936,7 +1034,7 @@ function sitemap(today) {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${[url('/', home), url('/en/', home),
     ...SERVICES.map((s) => url(`/${s.slug}/`)), url('/legal-bba/'), url('/cere-oferta/'),
-    url('/articole/'), url(`/articole/${ARTICLE.slug}/`),
+    url('/articole/'), ...ARTICLES.map((a) => url(`/articole/${a.slug}/`)),
     url(priv.ro, priv), url(priv.en, priv)].join('\n')}
 </urlset>
 `;
@@ -948,7 +1046,6 @@ export function bilanzFiles({ company: c, today, privacyBody }) {
     'en/index.html': home('en', c),
     'legal-bba/index.html': servicePage(LEGAL, c),
     'articole/index.html': articlesIndex(c),
-    [`articole/${ARTICLE.slug}/index.html`]: articlePage(c),
     'cere-oferta/index.html': offerPage(c),
     'protectia-datelor-cu-caracter-personal/index.html': privacyPage('ro', c, today, privacyBody),
     'en/privacy/index.html': privacyPage('en', c, today, privacyBody),
@@ -957,5 +1054,6 @@ export function bilanzFiles({ company: c, today, privacyBody }) {
     'sitemap.xml': sitemap(today),
   };
   for (const s of SERVICES) files[`${s.slug}/index.html`] = servicePage(s, c);
+  for (const a of ARTICLES) files[`articole/${a.slug}/index.html`] = articlePage(a, c);
   return files;
 }
